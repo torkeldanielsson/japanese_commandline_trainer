@@ -1,0 +1,7 @@
+[package]
+name = "hiragana"
+version = "0.1.0"
+authors = ["Torkel <torkel@voysys.se>"]
+
+[dependencies]
+rand = "0.5"
