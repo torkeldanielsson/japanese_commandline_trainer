@@ -27,25 +27,28 @@ fn print_kanas(kanagroup: Vec<&Kana>) -> String {
     }
     res = format!("{}\\\\\n\\par\n", res);
 
-    res = format!("{}\\huge\n", res);
+    res = format!("{}\\Large\n", res);
+
+    res = format!("{}\\linespread{{2}}\n", res);
 
     let mut slice_index = 0;
     let mut lines = 0;
 
-    let mut line_length = 10;
+    let mut line_length = 9;
     if kanas.len() < line_length {
         line_length = kanas.len();
     }
 
     let h_slice: &mut [&Kana] = kanas.as_mut_slice();
-    rng.shuffle(h_slice);
+    
+    //rng.shuffle(h_slice);
 
-    while lines < 11 {
+    while lines < 14 {
 
         let mut chars_in_line = 0;
 
         while chars_in_line < line_length {
-            res = format!("{}{}\\ \\ \\ \\ \\ \\ ", res, h_slice[slice_index].c);
+            res = format!("{}{}\\ \\ \\  ", res, h_slice[slice_index].c);
 
             slice_index += 1;
             chars_in_line += 1;
@@ -61,6 +64,10 @@ fn print_kanas(kanagroup: Vec<&Kana>) -> String {
         lines += 1;
     }
 
+    // res = format!("{}\\par\n", res);
+
+    res = format!("{}\\linespread{{1}}\n", res);
+
     res = format!("{}\\newpage\n", res);
 
     return res;
@@ -71,33 +78,181 @@ fn main() {
     let mut file = File::create("gen.tex").unwrap();
     file.write_all(b"\\documentclass{article}\n").expect("1");
     file.write_all(b"\\usepackage[a4paper]{geometry}\n").expect("2");
+    file.write_all(b"\\usepackage{setspace}\n").expect("2");
     file.write_all(b"\\pagenumbering{gobble}\n").expect("3");
     file.write_all(b"\\begin{document}\n").expect("4");
 
     let kanagroups = vec![
-        /*
+
         vec![
             Kana { c: "映画".to_owned(), romaji: "えいが = film".to_owned() },
             Kana { c: "音楽".to_owned(), romaji: "おんがく = musik".to_owned() },
+            Kana { c: "新聞".to_owned(), romaji: "しんぶん = tidning (dagstidning)".to_owned() },
             Kana { c: "雑誌".to_owned(), romaji: "ざっし = tidning (magazine)".to_owned() },
             Kana { c: "朝御飯".to_owned(), romaji: "あさごはん = frukost".to_owned() },
             Kana { c: "昼御飯".to_owned(), romaji: "ひるごはん = lunch".to_owned() },
             Kana { c: "晩御飯".to_owned(), romaji: "ばんごはん = middag".to_owned() },
-            Kana { c: "お酒".to_owned(), romaji: "おさけ = sprit (alkohol)".to_owned() },
-            Kana { c: "お茶".to_owned(), romaji: "おちゃ = grönt te".to_owned() },
-            Kana { c: "水".to_owned(), romaji: "みず = vatten".to_owned() },
-            Kana { c: "学校".to_owned(), romaji: "がっこう = skola".to_owned() },
+            Kana { c: "御飯".to_owned(), romaji: "ごはん = ris/måltid".to_owned() },
             Kana { c: "朝".to_owned(), romaji: "あさ = morgon".to_owned() },
             Kana { c: "今日".to_owned(), romaji: "きょう = idag".to_owned() },
             Kana { c: "今晩".to_owned(), romaji: "こんばん = ikväll".to_owned() },
             Kana { c: "週末".to_owned(), romaji: "しゅうまつ = helg".to_owned() },
-            Kana { c: "土曜日".to_owned(), romaji: "どようび = lördag".to_owned() },
-            Kana { c: "日曜日".to_owned(), romaji: "にちようび = söndag".to_owned() },
             Kana { c: "毎日".to_owned(), romaji: "まいにち = varje dag".to_owned() },
             Kana { c: "毎晩".to_owned(), romaji: "まいばん = varje kväll".to_owned() },
+            Kana { c: "アルバイト".to_owned(), romaji: "extra-jobb (t ex efter skolan)".to_owned() },
+            Kana { c: "デパート".to_owned(), romaji: "varuhus (typ Åhléns)".to_owned() },
         ],
-        */
+        
+        vec![
+            Kana { c: "行く".to_owned(), romaji: "いく = gå".to_owned() },
+            Kana { c: "帰える".to_owned(), romaji: "かえる = återvända/komma tillbaka".to_owned() },
+            Kana { c: "聞く".to_owned(), romaji: "きく = lyssna/höra".to_owned() },
+            Kana { c: "飲む".to_owned(), romaji: "のむ = dricka".to_owned() },
+            Kana { c: "話す".to_owned(), romaji: "はなす = prata".to_owned() },
+            Kana { c: "読む".to_owned(), romaji: "よむ = läsa".to_owned() },
+            Kana { c: "起きる".to_owned(), romaji: "おきる = stiga upp (~vakna)".to_owned() },
+            Kana { c: "食べる".to_owned(), romaji: "たべる = äta".to_owned() },
+            Kana { c: "寝る".to_owned(), romaji: "ねる = sova".to_owned() },
+            Kana { c: "見る".to_owned(), romaji: "みる = se/titta".to_owned() },
+            Kana { c: "来る".to_owned(), romaji: "くる = komma".to_owned() },
+            Kana { c: "する".to_owned(), romaji: "göra".to_owned() },
+            Kana { c: "勉強する".to_owned(), romaji: "べんきょうする = plugga/studera".to_owned() },
+            Kana { c: "早い".to_owned(), romaji: "はやい = tidig (tidigt)".to_owned() },
+            Kana { c: "時々".to_owned(), romaji: "ときどき = ibland (då och då)".to_owned() },
+            Kana { c: "テレビ".to_owned(), romaji: "teve".to_owned() },
+            Kana { c: "コーヒー".to_owned(), romaji: "kaffe".to_owned() },
+        ],
+        
+        vec![
+            Kana { c: "お酒".to_owned(), romaji: "おさけ = sprit (alkohol)".to_owned() },
+            Kana { c: "お茶".to_owned(), romaji: "おちゃ = grönt te".to_owned() },
+            Kana { c: "水".to_owned(), romaji: "みず = vatten".to_owned() },
+            Kana { c: "学校".to_owned(), romaji: "がっこう = skola".to_owned() },
+            Kana { c: "スポーツ".to_owned(), romaji: "sport".to_owned() },
+            Kana { c: "デート".to_owned(), romaji: "date".to_owned() },
+            Kana { c: "うち".to_owned(), romaji: "hemma (hos mig)".to_owned() },
+            Kana { c: "ホテル".to_owned(), romaji: "hotell".to_owned() },
+            Kana { c: "レストラン".to_owned(), romaji: "resturang".to_owned() },
+            Kana { c: "猫".to_owned(), romaji: "ねこ = katt".to_owned() },
+            Kana { c: "人".to_owned(), romaji: "ひと = person/folk/människor".to_owned() },
+            Kana { c: "お寺".to_owned(), romaji: "おてら = tempel".to_owned() },
+            Kana { c: "公園".to_owned(), romaji: "こうえん = park".to_owned() },
+            Kana { c: "バス停".to_owned(), romaji: "バスてい = busshållplats".to_owned() },
+            Kana { c: "病院".to_owned(), romaji: "びょういん = sjukhus".to_owned() },
+            Kana { c: "本屋".to_owned(), romaji: "ほんや = bokhandel".to_owned() },
+            Kana { c: "町".to_owned(), romaji: "まち = stad".to_owned() },
+            Kana { c: "昨日".to_owned(), romaji: "きのう = igår".to_owned() },
+            Kana { c: "さっき".to_owned(), romaji: "nyss".to_owned() },
+        ],
+        
+        vec![
+            Kana { c: "月曜日".to_owned(), romaji: "げつようび = måndag".to_owned() },
+            Kana { c: "火曜日".to_owned(), romaji: "かようび = tisdag".to_owned() },
+            Kana { c: "水曜日".to_owned(), romaji: "すいようび = onsdag".to_owned() },
+            Kana { c: "木曜日".to_owned(), romaji: "もくようび = torsdag".to_owned() },
+            Kana { c: "金曜日".to_owned(), romaji: "きんようび = fredag".to_owned() },
+            Kana { c: "土曜日".to_owned(), romaji: "どようび = lördag".to_owned() },
+            Kana { c: "日曜日".to_owned(), romaji: "にちようび = söndag".to_owned() },
+            Kana { c: "買い物".to_owned(), romaji: "かいもの = shopping (saker man köper)".to_owned() },
+            Kana { c: "あなた".to_owned(), romaji: "du (använd helst inte!)".to_owned() },
+            Kana { c: "犬".to_owned(), romaji: "いぬ = hund".to_owned() },
+            Kana { c: "お土産".to_owned(), romaji: "おみやげ = souvenir".to_owned() },
+            Kana { c: "子供".to_owned(), romaji: "こども = barn".to_owned() },
+            Kana { c: "写真".to_owned(), romaji: "しゃしん = fotografi".to_owned() },
+            Kana { c: "机".to_owned(), romaji: "つくえ = skrivbord".to_owned() },
+            Kana { c: "手紙".to_owned(), romaji: "てがみ = brev".to_owned() },
+            Kana { c: "クラス".to_owned(), romaji: "klass".to_owned() },
+            Kana { c: "パン".to_owned(), romaji: "bröd".to_owned() },
+            Kana { c: "スーパー".to_owned(), romaji: "stormarknad (typ ICA)".to_owned() },
+        ],
+        
+        vec![
+            Kana { c: "〜時間".to_owned(), romaji: "〜じかん = ~ timmar".to_owned() },
+            Kana { c: "一時間".to_owned(), romaji: "いちじかん = en timma".to_owned() },
+            Kana { c: "先週".to_owned(), romaji: "せんしゅう = förra veckan".to_owned() },
+            Kana { c: "時".to_owned(), romaji: "とき = när (tiden då något hände)".to_owned() },
+            Kana { c: "会う".to_owned(), romaji: "あう = träffa (möta någon)".to_owned() },
+            Kana { c: "ある".to_owned(), romaji: "finns".to_owned() },
+            Kana { c: "買う".to_owned(), romaji: "かう = köpa".to_owned() },
+            Kana { c: "書く".to_owned(), romaji: "かく = skriva".to_owned() },
+            Kana { c: "撮る".to_owned(), romaji: "とる = ta kort (fotografi)".to_owned() },
+            Kana { c: "待つ".to_owned(), romaji: "まつ = vänta".to_owned() },
+            Kana { c: "いる".to_owned(), romaji: "är/befinner sig (används för personer)".to_owned() },
+            Kana { c: "ごめんなさい".to_owned(), romaji: "förlåt".to_owned() },
+            Kana { c: "一人で".to_owned(), romaji: "ひとりで = ensam".to_owned() },
+            Kana { c: "右".to_owned(), romaji: "みぎ = höger".to_owned() },
+        ],
 
+        vec![
+            Kana { c: "左".to_owned(), romaji: "ひだり = vänster".to_owned() },
+            Kana { c: "前".to_owned(), romaji: "まえ = framför".to_owned() },
+            Kana { c: "後ろ".to_owned(), romaji: "うしろ = bakom".to_owned() },
+            Kana { c: "中".to_owned(), romaji: "なか = i/inuti".to_owned() },
+            Kana { c: "上".to_owned(), romaji: "うえ = över".to_owned() },
+            Kana { c: "下".to_owned(), romaji: "した = under".to_owned() },
+            Kana { c: "そば".to_owned(), romaji: "nära".to_owned() },
+            Kana { c: "隣".to_owned(), romaji: "となり = bredvid (granne med)".to_owned() },
+            Kana { c: "間".to_owned(), romaji: "あいだ = mellan (AとBの〜)".to_owned() },
+            Kana { c: "そこ".to_owned(), romaji: "där".to_owned() },
+            Kana { c: "ここ".to_owned(), romaji: "här".to_owned() },
+            Kana { c: "だから".to_owned(), romaji: "därför".to_owned() },
+            Kana { c: "たくさん".to_owned(), romaji: "många/mycket".to_owned() },
+            Kana { c: "どうして".to_owned(), romaji: "varför".to_owned() },
+            Kana { c: "もしもし".to_owned(), romaji: "hej (i telefon)".to_owned() },
+        ],
+
+        vec![
+            Kana { c: "成る".to_owned(), romaji: "なる = att bli".to_owned() },
+            Kana { c: "年".to_owned(), romaji: "とし/ネン = år".to_owned() },
+            Kana { c: "月".to_owned(), romaji: "つき/ゲツ、ガツ = månad".to_owned() },
+            Kana { c: "から".to_owned(), romaji: "från".to_owned() },
+            Kana { c: "日".to_owned(), romaji: "ひ/ニチ = dag".to_owned() },
+            Kana { c: "事".to_owned(), romaji: "こと = sak".to_owned() },
+            Kana { c: "ある(有る)".to_owned(), romaji: "att vara/är".to_owned() },
+            Kana { c: "など".to_owned(), romaji: "mm (med mera) / etc (et cetera)".to_owned() },
+            Kana { c: "言う".to_owned(), romaji: "いう = att säga (verb)".to_owned() },
+            Kana { c: "日本".to_owned(), romaji: "Japan".to_owned() },
+            Kana { c: "為".to_owned(), romaji: "ため = eftersom".to_owned() },
+            Kana { c: "人".to_owned(), romaji: "ひと = person/folk/människor".to_owned() },
+            Kana { c: "まで".to_owned(), romaji: "till".to_owned() },
+            Kana { c: "又".to_owned(), romaji: "また = också".to_owned() },
+            Kana { c: "行う".to_owned(), romaji: "おこなう = att göra (något)".to_owned() },
+            Kana { c: "できる(出来る)".to_owned(), romaji: "fungera/att kunna göra (något)".to_owned() },
+            Kana { c: "駅".to_owned(), romaji: "えき = (tåg)station".to_owned() },
+            Kana { c: "国".to_owned(), romaji: "くに = land".to_owned() },
+        ],
+
+        vec![
+            Kana { c: "大学".to_owned(), romaji: "だいがく = universitet".to_owned() },
+            Kana { c: "現在".to_owned(), romaji: "げんざい = aktuellt/existerande/nuvarande".to_owned() },
+            Kana { c: "後".to_owned(), romaji: "あと = senare/bakom".to_owned() },
+            Kana { c: "線".to_owned(), romaji: "せん = (tåg)linje".to_owned() },
+            Kana { c: "放送".to_owned(), romaji: "ほうそう = broadcast/utsändning".to_owned() },
+            Kana { c: "号".to_owned(), romaji: "ごう = nummer".to_owned() },
+            Kana { c: "軍".to_owned(), romaji: "ぐん = armé/trupper".to_owned() },
+            Kana { c: "無い".to_owned(), romaji: "ない = ingen/inget".to_owned() },
+            Kana { c: "部".to_owned(), romaji: "ぶ = del/avdelning".to_owned() },
+            Kana { c: "持つ".to_owned(), romaji: " = att ha/hålla".to_owned() },
+            Kana { c: "所".to_owned(), romaji: "もつ = ".to_owned() },
+            Kana { c: "名前".to_owned(), romaji: "なまえ = namn".to_owned() },
+        ],
+
+        vec![
+            Kana { c: "回".to_owned(), romaji: "かい = gånger/tillfälle".to_owned() },
+            Kana { c: "世界".to_owned(), romaji: "せかい = världen".to_owned() },
+            Kana { c: "時代".to_owned(), romaji: "じだい = period/epok/era".to_owned() },
+            Kana { c: "東京".to_owned(), romaji: "とうきょう = Tokyo".to_owned() },
+            Kana { c: "呼ぶ".to_owned(), romaji: "よぶ = att kalla på (någon)/samtal".to_owned() },
+            Kana { c: "その後".to_owned(), romaji: "そのあと = efter det".to_owned() },
+            Kana { c: "会".to_owned(), romaji: "かい = möte/sammankomst".to_owned() },
+            Kana { c: "会社".to_owned(), romaji: "かいしゃ = företag".to_owned() },
+            Kana { c: "機".to_owned(), romaji: "き = maskin/mekanism".to_owned() },
+            Kana { c: "利用".to_owned(), romaji: "りよう = användning".to_owned() },
+            Kana { c: "飛行機".to_owned(), romaji: "ひこうき = flygplan".to_owned() },
+            Kana { c: "洞窟".to_owned(), romaji: "どうくつ = grotta".to_owned() },
+        ],
+        
+/*
         vec![
             Kana { c: "ア".to_owned(), romaji: "a".to_owned() },
             Kana { c: "イ".to_owned(), romaji: "i".to_owned() },
@@ -173,7 +328,7 @@ fn main() {
             Kana { c: "ヲ".to_owned(), romaji: "å(wo)".to_owned() },
             Kana { c: "ン".to_owned(), romaji: "n".to_owned() },
         ],
-
+*/
 /*
         vec![
             Kana { c: "あ".to_owned(), romaji: "a".to_owned() },
@@ -265,7 +420,7 @@ fn main() {
     }
 */
 
-    for group_size in vec![1, 2, 5, 10] {
+    for group_size in vec![1, /* 2, 5, 10*/] {
 
         let mut counter = 0;
         let mut next_print = group_size;
