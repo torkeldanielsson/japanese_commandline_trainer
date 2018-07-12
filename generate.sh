@@ -1,0 +1,1 @@
+cargo run && pandoc --pdf-engine=xelatex gen.tex -V CJKmainfont="YuMincho Medium" -V geometry:margin=2cm -o output.pdf --from latex
