@@ -43,7 +43,7 @@ fn print_kanas(kanagroup: Vec<&Kana>) -> String {
     
     //rng.shuffle(h_slice);
 
-    while lines < 14 {
+    while lines < 12 {
 
         let mut chars_in_line = 0;
 
@@ -112,6 +112,9 @@ fn main() {
             Kana { c: "読む".to_owned(), romaji: "よむ = läsa".to_owned() },
             Kana { c: "起きる".to_owned(), romaji: "おきる = stiga upp (~vakna)".to_owned() },
             Kana { c: "食べる".to_owned(), romaji: "たべる = äta".to_owned() },
+        ],
+        
+        vec![
             Kana { c: "寝る".to_owned(), romaji: "ねる = sova".to_owned() },
             Kana { c: "見る".to_owned(), romaji: "みる = se/titta".to_owned() },
             Kana { c: "来る".to_owned(), romaji: "くる = komma".to_owned() },
@@ -133,6 +136,9 @@ fn main() {
             Kana { c: "うち".to_owned(), romaji: "hemma (hos mig)".to_owned() },
             Kana { c: "ホテル".to_owned(), romaji: "hotell".to_owned() },
             Kana { c: "レストラン".to_owned(), romaji: "resturang".to_owned() },
+        ],
+        
+        vec![
             Kana { c: "猫".to_owned(), romaji: "ねこ = katt".to_owned() },
             Kana { c: "人".to_owned(), romaji: "ひと = person/folk/människor".to_owned() },
             Kana { c: "お寺".to_owned(), romaji: "おてら = tempel".to_owned() },
@@ -154,16 +160,87 @@ fn main() {
             Kana { c: "土曜日".to_owned(), romaji: "どようび = lördag".to_owned() },
             Kana { c: "日曜日".to_owned(), romaji: "にちようび = söndag".to_owned() },
             Kana { c: "買い物".to_owned(), romaji: "かいもの = shopping (saker man köper)".to_owned() },
+        ],
+        
+        vec![
             Kana { c: "あなた".to_owned(), romaji: "du (använd helst inte!)".to_owned() },
             Kana { c: "犬".to_owned(), romaji: "いぬ = hund".to_owned() },
             Kana { c: "お土産".to_owned(), romaji: "おみやげ = souvenir".to_owned() },
             Kana { c: "子供".to_owned(), romaji: "こども = barn".to_owned() },
-            Kana { c: "写真".to_owned(), romaji: "しゃしん = fotografi".to_owned() },
             Kana { c: "机".to_owned(), romaji: "つくえ = skrivbord".to_owned() },
             Kana { c: "手紙".to_owned(), romaji: "てがみ = brev".to_owned() },
             Kana { c: "クラス".to_owned(), romaji: "klass".to_owned() },
             Kana { c: "パン".to_owned(), romaji: "bröd".to_owned() },
             Kana { c: "スーパー".to_owned(), romaji: "stormarknad (typ ICA)".to_owned() },
+        ],
+        
+        vec![
+            Kana { c: "海".to_owned(), romaji: "うみ = hav".to_owned() },
+            Kana { c: "切手".to_owned(), romaji: "きって = frimärke".to_owned() },
+            Kana { c: "切符".to_owned(), romaji: "きっぷ = biljett".to_owned() },
+            Kana { c: "サーフィング".to_owned(), romaji: "surfing".to_owned() },
+            Kana { c: "バス".to_owned(), romaji: "bus".to_owned() },
+            Kana { c: "宿題".to_owned(), romaji: "しゅくだい = läxa".to_owned() },
+            Kana { c: "食べ物".to_owned(), romaji: "たべもの = mat".to_owned() },
+            Kana { c: "誕生日".to_owned(), romaji: "たんじょうび = födelsedag".to_owned() },
+            Kana { c: "テスト".to_owned(), romaji: "prov (test)".to_owned() },
+            Kana { c: "天気".to_owned(), romaji: "てんき = väder".to_owned() },
+            Kana { c: "飲み物".to_owned(), romaji: "のみもの = dryck".to_owned() },
+            Kana { c: "葉書".to_owned(), romaji: "はがき = vykort".to_owned() },
+            Kana { c: "飛行機".to_owned(), romaji: "ひこうき = flygplan".to_owned() },
+            Kana { c: "部屋".to_owned(), romaji: "へや = rum".to_owned() },
+            Kana { c: "僕".to_owned(), romaji: "ぼく = jag (manligt, informellt)".to_owned() },
+        ],
+        
+        vec![
+            Kana { c: "休み".to_owned(), romaji: "やすみ = lov/ledigt".to_owned() },
+            Kana { c: "旅行".to_owned(), romaji: "りょこう = resa".to_owned() },
+            Kana { c: "新しい".to_owned(), romaji: "あたらしい = ny".to_owned() },
+            Kana { c: "暑い".to_owned(), romaji: "あつい = varmt (om vädret)".to_owned() },
+            Kana { c: "熱い".to_owned(), romaji: "あつい = varmt (om en sak)".to_owned() },
+            Kana { c: "忙しい".to_owned(), romaji: "いそがしい = upptagen".to_owned() },
+            Kana { c: "大きい".to_owned(), romaji: "おおきい = stor".to_owned() },
+            Kana { c: "面白い".to_owned(), romaji: "おもしろい = intressant/rolig".to_owned() },
+        ],
+        
+        vec![
+            Kana { c: "怖い".to_owned(), romaji: "こわい = läskig".to_owned() },
+            Kana { c: "寒い".to_owned(), romaji: "さむい = kallt (om vädret)".to_owned() },
+            Kana { c: "楽しい".to_owned(), romaji: "たのしい = roligt".to_owned() },
+            Kana { c: "小さい".to_owned(), romaji: "ちいさい = liten".to_owned() },
+            Kana { c: "つまらない".to_owned(), romaji: "tråkig".to_owned() },
+            Kana { c: "古い".to_owned(), romaji: "ふるい = gammal".to_owned() },
+            Kana { c: "難しい".to_owned(), romaji: "むずかしい = svår".to_owned() },
+            Kana { c: "やさしい".to_owned(), romaji: "vänlig".to_owned() },
+            Kana { c: "安い".to_owned(), romaji: "やすい = billig".to_owned() },
+        ],
+        
+        vec![
+            Kana { c: "嫌い".to_owned(), romaji: "きらい = ogilla".to_owned() },
+            Kana { c: "きれい".to_owned(), romaji: "fin".to_owned() },
+            Kana { c: "元気".to_owned(), romaji: "げんき = pigg/hälsosam".to_owned() },
+            Kana { c: "静か".to_owned(), romaji: "しずか = tyst".to_owned() },
+            Kana { c: "好き".to_owned(), romaji: "すき = gilla".to_owned() },
+            Kana { c: "大嫌い".to_owned(), romaji: "だいきらい = hata".to_owned() },
+            Kana { c: "大好き".to_owned(), romaji: "だいすき = älska".to_owned() },
+            Kana { c: "にぎやか".to_owned(), romaji: "livlig".to_owned() },
+            Kana { c: "ハンサム".to_owned(), romaji: "snygg".to_owned() },
+            Kana { c: "暇".to_owned(), romaji: "ひま = inte upptagen/har mycket tid".to_owned() },
+        ],
+        
+        vec![
+            Kana { c: "泳ぐ".to_owned(), romaji: "およぐ = simma".to_owned() },
+            Kana { c: "聞く".to_owned(), romaji: "きく = fråga (även lyssna)".to_owned() },
+            Kana { c: "乗る".to_owned(), romaji: "のる = kliva ombord".to_owned() },
+            Kana { c: "やる".to_owned(), romaji: "att göra (något)".to_owned() },
+            Kana { c: "出かける".to_owned(), romaji: "でかける = kliva av (t ex en buss)".to_owned() },
+            Kana { c: "一緒に".to_owned(), romaji: "いっしょに = tillsammans".to_owned() },
+            Kana { c: "それから".to_owned(), romaji: "och sen".to_owned() },
+            Kana { c: "大丈夫".to_owned(), romaji: "だいじょうぶ = det är ok/allt är som det ska/inget att oroa sig för".to_owned() },
+            Kana { c: "とても".to_owned(), romaji: "väldigt/mycket".to_owned() },
+            Kana { c: "どんな".to_owned(), romaji: "vilken sorts ...".to_owned() },
+            Kana { c: "〜まで".to_owned(), romaji: "till (en plats/tid) / så långt som till (en plats)".to_owned() },
+            Kana { c: "〜枚".to_owned(), romaji: "〜まい = räkneord för platta saker".to_owned() },
         ],
         
         vec![
@@ -175,15 +252,17 @@ fn main() {
             Kana { c: "ある".to_owned(), romaji: "finns".to_owned() },
             Kana { c: "買う".to_owned(), romaji: "かう = köpa".to_owned() },
             Kana { c: "書く".to_owned(), romaji: "かく = skriva".to_owned() },
-            Kana { c: "撮る".to_owned(), romaji: "とる = ta kort (fotografi)".to_owned() },
+            Kana { c: "写真".to_owned(), romaji: "しゃしん = fotografi".to_owned() },
+            Kana { c: "写真を撮る".to_owned(), romaji: "しゃしんをとる = att ta kort/fota".to_owned() },
+            Kana { c: "撮る".to_owned(), romaji: "とる = att ta (kort, för fotografi)".to_owned() },
             Kana { c: "待つ".to_owned(), romaji: "まつ = vänta".to_owned() },
             Kana { c: "いる".to_owned(), romaji: "är/befinner sig (används för personer)".to_owned() },
             Kana { c: "ごめんなさい".to_owned(), romaji: "förlåt".to_owned() },
             Kana { c: "一人で".to_owned(), romaji: "ひとりで = ensam".to_owned() },
-            Kana { c: "右".to_owned(), romaji: "みぎ = höger".to_owned() },
         ],
 
         vec![
+            Kana { c: "右".to_owned(), romaji: "みぎ = höger".to_owned() },
             Kana { c: "左".to_owned(), romaji: "ひだり = vänster".to_owned() },
             Kana { c: "前".to_owned(), romaji: "まえ = framför".to_owned() },
             Kana { c: "後ろ".to_owned(), romaji: "うしろ = bakom".to_owned() },
@@ -420,7 +499,7 @@ fn main() {
     }
 */
 
-    for group_size in vec![1, /* 2, 5, 10*/] {
+    for group_size in vec![2, /* 2, 5, 10*/] {
 
         let mut counter = 0;
         let mut next_print = group_size;
