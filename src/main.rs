@@ -27,7 +27,7 @@ fn print_kanas(kanagroup: Vec<&Kana>) -> String {
     }
     res = format!("{}\\\\\n\\par\n", res);
 
-    res = format!("{}\\Large\n", res);
+    res = format!("{}\\large\n", res);
 
     res = format!("{}\\linespread{{2}}\n", res);
 
@@ -43,7 +43,7 @@ fn print_kanas(kanagroup: Vec<&Kana>) -> String {
     
     //rng.shuffle(h_slice);
 
-    while lines < 12 {
+    while lines < 16 {
 
         let mut chars_in_line = 0;
 
@@ -83,7 +83,7 @@ fn main() {
     file.write_all(b"\\begin{document}\n").expect("4");
 
     let kanagroups = vec![
-
+/*
         vec![
             Kana { c: "映画".to_owned(), romaji: "えいが = film".to_owned() },
             Kana { c: "音楽".to_owned(), romaji: "おんがく = musik".to_owned() },
@@ -330,7 +330,87 @@ fn main() {
             Kana { c: "飛行機".to_owned(), romaji: "ひこうき = flygplan".to_owned() },
             Kana { c: "洞窟".to_owned(), romaji: "どうくつ = grotta".to_owned() },
         ],
-        
+*/
+/*
+        // easy news umeboshi pt 1
+        vec![
+            Kana { c: "梅干し".to_owned(), romaji: "うめぼし = saltade, torkade, plommon".to_owned() },
+            Kana { c: "有名".to_owned(), romaji: "ゆうめい = berömd".to_owned() },
+            Kana { c: "梅".to_owned(), romaji: "うめ = körsbär".to_owned() },
+            Kana { c: "暑い".to_owned(), romaji: "あつい = varmt (väder)".to_owned() },
+            Kana { c: "とても".to_owned(), romaji: "väldigt".to_owned() },
+            Kana { c: "続いています".to_owned(), romaji: "つづいています = fortsätter".to_owned() },
+            Kana { c: "塩分".to_owned(), romaji: "えんぶん = salt".to_owned() },
+            Kana { c: "多い".to_owned(), romaji: "おおい = mycket".to_owned() },
+            Kana { c: "食べて".to_owned(), romaji: "たべて = ät (grundform är 食べる)".to_owned() },
+            Kana { c: "熱中症".to_owned(), romaji: "ねっちゅうしょう = värmeslag".to_owned() },
+            Kana { c: "考える".to_owned(), romaji: "かんがえる = tänka".to_owned() },
+            Kana { c: "人".to_owned(), romaji: "ひと = människa, person".to_owned() },
+            Kana { c: "県".to_owned(), romaji: "けん = prefektur, lite som landskap".to_owned() },
+            Kana { c: "市".to_owned(), romaji: "し = stad".to_owned() },
+        ],
+
+        // easy news umeboshi pt 2
+        vec![
+            Kana { c: "作る".to_owned(), romaji: "つくる = att göra, producera".to_owned() },
+            Kana { c: "工場".to_owned(), romaji: "こうじょう = fabrik".to_owned() },
+            Kana { c: "買いたい".to_owned(), romaji: "かいたい = vill köpa (något), grundform 買う".to_owned() },
+            Kana { c: "注文".to_owned(), romaji: "ちゅうもん = beställning".to_owned() },
+            Kana { c: "たくさん".to_owned(), romaji: "stor mängd, mycket".to_owned() },
+            Kana { c: "足りる".to_owned(), romaji: "たりる = (att något är) tillräckligt".to_owned() },
+            Kana { c: "別".to_owned(), romaji: "べつ = en annan, särskild".to_owned() },
+            Kana { c: "仕事".to_owned(), romaji: "しごと = arbete".to_owned() },
+            Kana { c: "手伝う".to_owned(), romaji: "てつだう = att hjälpa till".to_owned() },
+            Kana { c: "午後９時まで".to_owned(), romaji: "ごごくじまで = fram till klockan 21 (午後 = p.m.)".to_owned() },
+            Kana { c: "休みの日".to_owned(), romaji: "やすみのひ = helgdag/ledig dag".to_owned() },
+            Kana { c: "皆さん".to_owned(), romaji: "みなさん = alla".to_owned() },
+            Kana { c: "元気".to_owned(), romaji: "げんき = pigg, livfull, glad".to_owned() },
+            Kana { c: "過ごしてください".to_owned(), romaji: "すごしてください = snälla spendera (den)".to_owned() },
+            Kana { c: "話していました".to_owned(), romaji: "はなしていました = pratade".to_owned() },
+        ],
+*/
+
+/*
+        // easy news whale pt 1
+        vec![
+            Kana { c: "神奈川県".to_owned(), romaji: "かながわけん = Kanagawa prefektur".to_owned() },
+            Kana { c: "鎌倉市".to_owned(), romaji: "かまくらし = Kamakura stad".to_owned() },
+            Kana { c: "海岸".to_owned(), romaji: "かいがん = strand".to_owned() },
+            Kana { c: "死んでいる".to_owned(), romaji: "しんでいる = död".to_owned() },
+            Kana { c: "クジラ".to_owned(), romaji: "val".to_owned() },
+            Kana { c: "見つかりました".to_owned(), romaji: "みつかりました = hittades".to_owned() },
+            Kana { c: "国立科学博物館".to_owned(), romaji: "こくりつかがくはくぶつかん = naturhistoriska riksmuséet".to_owned() },
+            Kana { c: "専門家".to_owned(), romaji: "せんもんか = specialist / expert".to_owned() },
+            Kana { c: "体".to_owned(), romaji: "からだ = kropp".to_owned() },
+            Kana { c: "調べる".to_owned(), romaji: "しらべる = att undersöka".to_owned() },
+            Kana { c: "シロナガスクジラ".to_owned(), romaji: "(白長須鯨) = blåval".to_owned() },
+            Kana { c: "だ".to_owned(), romaji: "informell form av です = är / att vara".to_owned() },
+            Kana { c: "わかりました".to_owned(), romaji: "förstod (grundform: 分かる/わかる)".to_owned() },
+            Kana { c: "地球".to_owned(), romaji: "ちきゅう = jorden (planeten)".to_owned() },
+            Kana { c: "いちばん".to_owned(), romaji: "(一番) = nummer ett, den första".to_owned() },
+            Kana { c: "大きい".to_owned(), romaji: "おおきい = stor".to_owned() },
+        ],
+*/
+        // easy news whale pt 1
+        vec![
+            Kana { c: "動物".to_owned(), romaji: "どうぶつ = djur".to_owned() },
+            Kana { c: "雄".to_owned(), romaji: "おす = manligt kön/hanne".to_owned() },
+            Kana { c: "長さ".to_owned(), romaji: "ながさ = längd".to_owned() },
+            Kana { c: "今年".to_owned(), romaji: "".to_owned() },
+            Kana { c: "生まれた".to_owned(), romaji: "".to_owned() },
+            Kana { c: "子ども".to_owned(), romaji: "(子供) = こども = barn".to_owned() },
+            Kana { c: "考えています".to_owned(), romaji: "かんがえています = tror/tänker".to_owned() },
+            Kana { c: "流れてきた".to_owned(), romaji: "ながれてきた = hitspolad (流れる = bortspolad)".to_owned() },
+            Kana { c: "初めて".to_owned(), romaji: "はじめて = första gången (även: börja)".to_owned() },
+            Kana { c: "だろう".to_owned(), romaji: "ser det ut som/tror man".to_owned() },
+            Kana { c: "言っています".to_owned(), romaji: "いっています = säger (grundform: 言う)".to_owned() },
+            Kana { c: "細かく".to_owned(), romaji: "こまかく = ".to_owned() },
+            Kana { c: "原因".to_owned(), romaji: "げんいん = ursprung".to_owned() },
+            Kana { c: "しっかり".to_owned(), romaji: "(確り) = ordentligt".to_owned() },
+            Kana { c: "~なければならない".to_owned(), romaji: "~ det är inte ok att inte göra \"~\"".to_owned() },
+            Kana { c: "思っています".to_owned(), romaji: "おもっています = tror (grundform 思う)".to_owned() },
+        ],
+
 /*
         vec![
             Kana { c: "ア".to_owned(), romaji: "a".to_owned() },
