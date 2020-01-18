@@ -10,7 +10,7 @@ struct Word {
     swedish: &'static str,
 }
 
-fn print_words(words: &Vec<Word>) -> String {
+fn print_words(words: &Vec<Word>, kanjis: bool) -> String {
     let mut res: String = String::new();
     let mut rng = rand::thread_rng();
 
@@ -26,7 +26,8 @@ fn print_words(words: &Vec<Word>) -> String {
     res = format!("{}\\\\\n\\par\n", res);
 
     res = format!("{}\\large\n", res);
-    res = format!("{}\\linespread{{2}}\n", res);
+
+    res = format!("{}\\begin{{spacing}}{{2.1}}\n", res);
 
     let mut slice_index = 0;
     let mut lines = 0;
@@ -39,11 +40,15 @@ fn print_words(words: &Vec<Word>) -> String {
 
     let mut h_slice = words.to_vec();
 
-    while lines < 24 {
+    while lines < 26 {
         let mut chars_in_line = 0;
 
         while chars_in_line < line_length {
-            res = format!("{}{}\\ \\ \\  ", res, h_slice[slice_index].kanji);
+            if kanjis {
+                res = format!("{}\\mbox{{{}}}\\ \\ \\  ", res, h_slice[slice_index].kanji);
+            } else {
+                res = format!("{}{}\\ \\ \\ \\ \\  ", res, h_slice[slice_index].swedish);
+            }
 
             slice_index += 1;
             chars_in_line += 1;
@@ -54,33 +59,21 @@ fn print_words(words: &Vec<Word>) -> String {
             }
         }
 
-        res = format!("{}\\\\\n\\par\n", res);
-
         lines += 1;
     }
+
+    res = format!("{}\\end{{spacing}}\n", res);
 
     return res;
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let mut file = File::create("gen.tex").unwrap();
-
-    file.write_all(b"\\documentclass{article}\n")?;
-    file.write_all(b"\\usepackage[a4paper, margin=0.5in]{geometry}\n")?;
-    file.write_all(b"\\usepackage{setspace}\n")?;
-    file.write_all(b"\\usepackage[utf8]{inputenc}\n")?;
-    file.write_all(b"\\usepackage{CJKutf8, pinyin}\n")?;
-    file.write_all(b"\\usepackage[overlap, CJK]{ruby}\n")?;
-    file.write_all(b"\\pagenumbering{gobble}\n")?;
-    file.write_all(b"\\begin{document}\n")?;
-    file.write_all(b"\\begin{CJK*}{UTF8}{min}\n")?;
-
     let words = vec![
         /*
         Word {
             kanji: "事",
             hiragana: "こと",
-            swedish: "Sak, abstrakt begrepp",
+            swedish: "(abstrakt) Sak, begrepp",
         },
         Word {
             kanji: "言う",
@@ -120,7 +113,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         Word {
             kanji: "何時",
             hiragana: "なんじ",
-            swedish: "När?",
+            swedish: "Vilken tid?",
         },
         Word {
             kanji: "来る",
@@ -145,7 +138,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         Word {
             kanji: "所",
             hiragana: "ところ",
-            swedish: "Plats (mer abstrakt)",
+            swedish: "(abstrakt) Plats",
         },
         Word {
             kanji: "自転車",
@@ -153,8 +146,6 @@ fn main() -> Result<(), Box<dyn Error>> {
             swedish: "Cykel",
         },
         */
-
-        /*
         Word {
             kanji: "分かる",
             hiragana: "わ.かる",
@@ -205,7 +196,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             hiragana: "かんが.える",
             swedish: "Tänka",
         },
-        */
+        /*
         Word {
             kanji: "入り",
             hiragana: "い.り",
@@ -269,12 +260,12 @@ fn main() -> Result<(), Box<dyn Error>> {
         Word {
             kanji: "常",
             hiragana: "じょう",
-            swedish: "(abstrakt) det vanliga, oföränderligt",
+            swedish: "(abstrakt) Det vanliga, oföränderligt",
         },
         Word {
             kanji: "用",
             hiragana: "よう",
-            swedish: "(abstrakt) anledning, användning, uppgift",
+            swedish: "(abstrakt) Anledning, användning, uppgift",
         },
         Word {
             kanji: "漢字",
@@ -284,7 +275,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         Word {
             kanji: "非",
             hiragana: "ひ",
-            swedish: "(abstrakt) fel, misstag, icke-",
+            swedish: "(abstrakt) Fel, misstag, icke-",
         },
         Word {
             kanji: "非常",
@@ -296,12 +287,51 @@ fn main() -> Result<(), Box<dyn Error>> {
             hiragana: "じょう.よう.かん.じ",
             swedish: "Jōyō kanji​ (lista med 2136 kanji som ni måste lära er)",
         },
+        */
     ];
 
-    file.write_all(print_words(&words).as_bytes())?;
+    {
+        let mut file = File::create("gen_kanji.tex").unwrap();
 
-    file.write_all(b"\\end{CJK*}\n")?;
-    file.write_all(b"\\end{document}\n")?;
+        file.write_all(b"\\documentclass{article}\n")?;
+        file.write_all(b"\\usepackage[a4paper, margin=0.5in]{geometry}\n")?;
+        file.write_all(b"\\usepackage{setspace}\n")?;
+        file.write_all(b"\\hyphenpenalty 10000")?;
+        file.write_all(b"\\exhyphenpenalty 10000")?;
 
+        file.write_all(b"\\usepackage[utf8]{inputenc}\n")?;
+        file.write_all(b"\\usepackage{CJKutf8, pinyin}\n")?;
+        file.write_all(b"\\usepackage[overlap, CJK]{ruby}\n")?;
+        file.write_all(b"\\pagenumbering{gobble}\n")?;
+        file.write_all(b"\\begin{document}\n")?;
+        file.write_all(b"\\begin{CJK*}{UTF8}{min}\n")?;
+
+        file.write_all(print_words(&words, true).as_bytes())?;
+
+        file.write_all(b"\\end{CJK*}\n")?;
+        file.write_all(b"\\end{document}\n")?;
+    }
+
+    {
+        let mut file = File::create("gen_swedish.tex").unwrap();
+
+        file.write_all(b"\\documentclass{article}\n")?;
+        file.write_all(b"\\usepackage[a4paper, margin=0.5in]{geometry}\n")?;
+        file.write_all(b"\\usepackage{setspace}\n")?;
+        file.write_all(b"\\hyphenpenalty 10000")?;
+        file.write_all(b"\\exhyphenpenalty 10000")?;
+
+        file.write_all(b"\\usepackage[utf8]{inputenc}\n")?;
+        file.write_all(b"\\usepackage{CJKutf8, pinyin}\n")?;
+        file.write_all(b"\\usepackage[overlap, CJK]{ruby}\n")?;
+        file.write_all(b"\\pagenumbering{gobble}\n")?;
+        file.write_all(b"\\begin{document}\n")?;
+        file.write_all(b"\\begin{CJK*}{UTF8}{min}\n")?;
+
+        file.write_all(print_words(&words, false).as_bytes())?;
+
+        file.write_all(b"\\end{CJK*}\n")?;
+        file.write_all(b"\\end{document}\n")?;
+    }
     Ok(())
 }
