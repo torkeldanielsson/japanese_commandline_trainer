@@ -1,1 +1,1 @@
-cargo run && pdflatex gen.tex
+cargo fmt && cargo run && pdflatex gen.tex
