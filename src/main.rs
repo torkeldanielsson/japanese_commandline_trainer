@@ -1,6 +1,5 @@
-extern crate rand;
-
 use rand::Rng;
+use std::error::Error;
 use std::fs::File;
 use std::io::prelude::*;
 
@@ -10,7 +9,6 @@ struct Kana {
 }
 
 fn print_kanas(kanagroup: Vec<&Kana>) -> String {
-
     let mut res: String = "".to_owned();
 
     let mut kanas = Vec::new();
@@ -40,11 +38,10 @@ fn print_kanas(kanagroup: Vec<&Kana>) -> String {
     }
 
     let h_slice: &mut [&Kana] = kanas.as_mut_slice();
-    
+
     //rng.shuffle(h_slice);
 
     while lines < 16 {
-
         let mut chars_in_line = 0;
 
         while chars_in_line < line_length {
@@ -73,14 +70,19 @@ fn print_kanas(kanagroup: Vec<&Kana>) -> String {
     return res;
 }
 
-fn main() {
-
+fn main() -> Result<(), Box<dyn Error>> {
+    
     let mut file = File::create("gen.tex").unwrap();
-    file.write_all(b"\\documentclass{article}\n").expect("1");
-    file.write_all(b"\\usepackage[a4paper]{geometry}\n").expect("2");
-    file.write_all(b"\\usepackage{setspace}\n").expect("2");
-    file.write_all(b"\\pagenumbering{gobble}\n").expect("3");
-    file.write_all(b"\\begin{document}\n").expect("4");
+
+    file.write_all(b"\\documentclass{article}\n")?;
+    file.write_all(b"\\usepackage[a4paper, margin=0.5in]{geometry}\n")?;
+    file.write_all(b"\\usepackage{setspace}\n")?;
+    file.write_all(b"\\usepackage[utf8]{inputenc}\n")?;
+    file.write_all(b"\\usepackage{CJKutf8, pinyin}\n")?;
+    file.write_all(b"\\usepackage[overlap, CJK]{ruby}\n")?;
+    file.write_all(b"\\pagenumbering{gobble}\n")?;
+    file.write_all(b"\\begin{document}\n")?;
+    file.write_all(b"\\begin{CJK*}{UTF8}{min}\n")?;
 
     let kanagroups = vec![
 /*
@@ -567,27 +569,25 @@ fn main() {
 */
         ];
 
-/*
-    for kanagroup in &kanagroups {
+    /*
+        for kanagroup in &kanagroups {
 
-        let mut kanas = Vec::new();
-        for k in kanagroup {
-            kanas.push(k);
+            let mut kanas = Vec::new();
+            for k in kanagroup {
+                kanas.push(k);
+            }
+
+            print_kanas(kanas);
         }
+    */
 
-        print_kanas(kanas);
-    }
-*/
-
-    for group_size in vec![2, /* 2, 5, 10*/] {
-
+    for group_size in vec![2 /* 2, 5, 10*/] {
         let mut counter = 0;
         let mut next_print = group_size;
 
         let mut kanas_to_print = Vec::new();
 
         while counter < kanagroups.len() {
-
             for k in &kanagroups[counter] {
                 kanas_to_print.push(k);
             }
@@ -595,14 +595,14 @@ fn main() {
             counter += 1;
 
             if counter >= next_print {
-                file.write_all(print_kanas(kanas_to_print).as_bytes()).expect("6");
+                file.write_all(print_kanas(kanas_to_print).as_bytes())?;
                 kanas_to_print = Vec::new();
                 next_print += group_size;
             }
         }
 
         if kanas_to_print.len() > 0 {
-            file.write_all(print_kanas(kanas_to_print).as_bytes()).expect("7");
+            file.write_all(print_kanas(kanas_to_print).as_bytes())?;
         }
     }
 
@@ -619,6 +619,8 @@ fn main() {
     }
     */
 
+    file.write_all(b"\\end{CJK*}\n")?;
+    file.write_all(b"\\end{document}\n")?;
 
-    file.write_all(b"\\end{document}\n").expect("7");
+    Ok(())
 }

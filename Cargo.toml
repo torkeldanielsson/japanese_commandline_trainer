@@ -2,6 +2,7 @@
 name = "hiragana"
 version = "0.1.0"
 authors = ["Torkel <torkel@voysys.se>"]
+edition = "2018"
 
 [dependencies]
 rand = "0.5"

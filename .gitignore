@@ -2,3 +2,5 @@
 **/*.rs.bk
 *.tex
 *.pdf
+*.aux
+*.log
