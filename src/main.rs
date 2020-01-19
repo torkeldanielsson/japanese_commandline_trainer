@@ -85,7 +85,13 @@ fn print_examples(words: &Vec<Word>) -> String {
     res = format!("{}\\large\n", res);
     res = format!("{}\\begin{{spacing}}{{2.5}}\n", res);
     res = format!("{}\\begin{{center}}\n", res);
-    res = format!("{}\\begin{{longtabu}}{{ l l }}\n", res);
+
+    res = format!("{}\\setlength\\LTleft{{0pt}}\n", res);
+    res = format!("{}\\setlength\\LTright{{0pt}}\n", res);
+    res = format!(
+        "{}\\begin{{longtabu}}{{@{{\\extracolsep{{\\fill}}}} l l }}\n",
+        res
+    );
 
     let mut samples: Vec<&SampleSentence> = Vec::new();
 
@@ -240,6 +246,8 @@ fn main() -> Result<(), Box<dyn Error>> {
             english: "Tänka",
         },
         */
+
+        /*
         Word {
             kanji: "入り",
             hiragana: "い.り",
@@ -467,13 +475,13 @@ fn main() -> Result<(), Box<dyn Error>> {
         Word {
             kanji: "常",
             hiragana: "じょう",
-            english: "(abstrakt) Det vanliga / oföränderligt",
+            english: "eternity; permanence; perpetuity",
             samples: vec![],
         },
         Word {
             kanji: "用",
             hiragana: "よう",
-            english: "(abstrakt) Anledning / användning / uppgift",
+            english: "use; purpose​; task",
             samples: vec![
                 SampleSentence {
                     kanji: "何の用だ。",
@@ -492,7 +500,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         Word {
             kanji: "漢字",
             hiragana: "かん.じ",
-            english: "Kanji",
+            english: "kanji",
             samples: vec![
                 SampleSentence {
                     kanji: "漢字を少し教えてください。",
@@ -511,13 +519,13 @@ fn main() -> Result<(), Box<dyn Error>> {
         Word {
             kanji: "非",
             hiragana: "ひ",
-            english: "(abstrakt) Fel / misstag, icke-",
+            english: "fault; error; mistake; un-; non-",
             samples: vec![],
         },
         Word {
             kanji: "非常",
             hiragana: "ひ.じょう",
-            english: "Nödsituation / Ovanligt",
+            english: "emergency; extraordinary",
             samples: vec![SampleSentence {
                 kanji: "彼女は非常に忙しい。",
                 english: "She is very busy.",
@@ -526,11 +534,266 @@ fn main() -> Result<(), Box<dyn Error>> {
         Word {
             kanji: "常用漢字",
             hiragana: "じょう.よう.かん.じ",
-            english: "Jōyō kanji​ (lista med 2136 kanji)",
+            english: "kanji for common use; jōyō kanji",
             samples: vec![SampleSentence {
                 kanji: "常用漢字を学ぶのは良い事です。",
                 english: "It's good to learn the Jōyō kanji.​",
             }],
+        },
+        */
+        Word {
+            kanji: "君",
+            hiragana: "きみ",
+            english: "you; buddy; pal​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "君が好きだ。",
+                    english: "I like you. / I love you.",
+                },
+                SampleSentence {
+                    kanji: "君も行くか。",
+                    english: "Are you going, too?",
+                },
+                SampleSentence {
+                    kanji: "君はいつ帰る？",
+                    english: "When are you going home?",
+                },
+            ],
+        },
+        Word {
+            kanji: "好き",
+            hiragana: "す.き",
+            english: "liked; favourite; loved",
+            samples: vec![
+                SampleSentence {
+                    kanji: "ケーキは好きですか？",
+                    english: "Do you like cake?",
+                },
+                SampleSentence {
+                    kanji: "彼が大好き！",
+                    english: "I really like him!",
+                },
+            ],
+        },
+        Word {
+            kanji: "彼",
+            hiragana: "かれ",
+            english: "he; him",
+            samples: vec![
+                SampleSentence {
+                    kanji: "彼寝てる？",
+                    english: "Is he sleeping?",
+                },
+                SampleSentence {
+                    kanji: "彼は寝た。",
+                    english: "He went to bed.",
+                },
+            ],
+        },
+        Word {
+            kanji: "帰る",
+            hiragana: "かえ.る",
+            english: "to return; to go home; to go back",
+            samples: vec![
+                SampleSentence {
+                    kanji: "今から帰る？",
+                    english: "Are you going back now?",
+                },
+                SampleSentence {
+                    kanji: "帰りなさい。",
+                    english: "Please go home.",
+                },
+                SampleSentence {
+                    kanji: "7時に帰るよ。",
+                    english: "I'll be back at seven o'clock.",
+                },
+            ],
+        },
+        Word {
+            kanji: "彼女",
+            hiragana: "かの.じょ",
+            english: "she; her",
+            samples: vec![
+                SampleSentence {
+                    kanji: "彼女は元気？",
+                    english: "Is she ok?",
+                },
+                SampleSentence {
+                    kanji: "彼女は学生だ。",
+                    english: "She's a student.",
+                },
+                SampleSentence {
+                    kanji: "彼女は忙しい。",
+                    english: "She's busy.",
+                },
+            ],
+        },
+        Word {
+            kanji: "忙しい",
+            hiragana: "いそが.しい",
+            english: "busy; occupied; restless",
+            samples: vec![
+                SampleSentence {
+                    kanji: "私は忙しい。",
+                    english: "I'm busy. / I have much to do.",
+                },
+                SampleSentence {
+                    kanji: "少し忙しい。",
+                    english: "I'm a bit busy. / I'm in a bit of a hurry.",
+                },
+                SampleSentence {
+                    kanji: "宿題で忙しい。",
+                    english: "I'm busy doing homework.",
+                },
+            ],
+        },
+        Word {
+            kanji: "学ぶ",
+            hiragana: "まなぶ",
+            english: "to study (in depth); to learn",
+            samples: vec![
+                SampleSentence {
+                    kanji: "フランス語を学ぶのは難しい。",
+                    english: "It's difficult to learn French.",
+                },
+                SampleSentence {
+                    kanji: "学ぶ事がたくさんあります。",
+                    english: "There is a lot to learn.",
+                },
+            ],
+        },
+        Word {
+            kanji: "読む",
+            hiragana: "よ.む",
+            english: "to read​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "何読んでるの？",
+                    english: "What are you reading?",
+                },
+                SampleSentence {
+                    kanji: "私は読みます。",
+                    english: "I read.",
+                },
+                SampleSentence {
+                    kanji: "これを読んで。",
+                    english: "Read this.",
+                },
+                SampleSentence {
+                    kanji: "彼は読めません。",
+                    english: "He can't read it.",
+                },
+            ],
+        },
+        Word {
+            kanji: "電池",
+            hiragana: "でん.ち",
+            english: "battery",
+            samples: vec![
+                SampleSentence {
+                    kanji: "カメラ用の電池を下さい。",
+                    english: "May I have some camera batteries, please?",
+                },
+                SampleSentence {
+                    kanji: "やばい、電池切れそう",
+                    english: "Oh no, my battery’s nearly dead.",
+                },
+            ],
+        },
+        Word {
+            kanji: "少し",
+            hiragana: "すこ.し",
+            english: "small quantity; little; few",
+            samples: vec![
+                SampleSentence {
+                    kanji: "少しテレビを見てもいいですか。",
+                    english: "Do you mind if I watch a little TV?",
+                },
+                SampleSentence {
+                    kanji: "風が少しある。",
+                    english: "There's some wind.",
+                },
+                SampleSentence {
+                    kanji: "今日は少し寒い。",
+                    english: "It's a little cold today.",
+                },
+            ],
+        },
+        Word {
+            kanji: "教える",
+            hiragana: "おし.える",
+            english: "to teach; to instruct​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "アンは教えます。",
+                    english: "Anne teaches",
+                },
+                SampleSentence {
+                    kanji: "私は英語を教えます。",
+                    english: "I teach English.",
+                },
+                SampleSentence {
+                    kanji: "彼女は英語を教える事ができる。",
+                    english: "She can teach English.",
+                },
+            ],
+        },
+        Word {
+            kanji: "朝食",
+            hiragana: "ちょう.しょく",
+            english: "breakfast",
+            samples: vec![
+                SampleSentence {
+                    kanji: "朝食を食べなかった。",
+                    english: "I didn't have any breakfast.",
+                },
+                SampleSentence {
+                    kanji: "彼は朝食を食べた。",
+                    english: "He ate breakfast.",
+                },
+                SampleSentence {
+                    kanji: "朝食に何をとりましたか。",
+                    english: "What did you have for breakfast?",
+                },
+            ],
+        },
+        Word {
+            kanji: "宿題",
+            hiragana: "しゅく.だい",
+            english: "homework; assignment",
+            samples: vec![
+                SampleSentence {
+                    kanji: "宿題やった？",
+                    english: "Did you do your homework?",
+                },
+                SampleSentence {
+                    kanji: "宿題をやります。",
+                    english: "I'll do my homework.",
+                },
+                SampleSentence {
+                    kanji: "彼は今宿題で忙しい。",
+                    english: "He's busy with his homework now.",
+                },
+            ],
+        },
+        Word {
+            kanji: "寒い",
+            hiragana: "さむ.い",
+            english: "cold (e.g. weather)​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "寒いです。",
+                    english: "It's cold.",
+                },
+                SampleSentence {
+                    kanji: "彼女は寒いと言った。",
+                    english: "She told me she is cold.",
+                },
+                SampleSentence {
+                    kanji: "私は少し寒いです。",
+                    english: "I am a little cold.",
+                },
+            ],
         },
     ];
 
