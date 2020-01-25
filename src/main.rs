@@ -1066,6 +1066,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         },
         */
 
+        /*
         // 6
         Word {
             kanji: "取る",
@@ -1331,6 +1332,274 @@ fn main() -> Result<(), Box<dyn Error>> {
                 SampleSentence {
                     kanji: "彼女がどこに住んでいるか知っていますか？",
                     english: "Do you know where she lives?",
+                },
+            ],
+        },
+        */
+        Word {
+            kanji: "学校",
+            hiragana: "がっ.こう",
+            english: "school​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "猫は学校に行きません。",
+                    english: "Cats do not go to school.",
+                },
+                SampleSentence {
+                    kanji: "私は学校の食べ物が好きです。",
+                    english: "I like the food in school.",
+                },
+            ],
+        },
+        Word {
+            kanji: "ご飯",
+            hiragana: "ご.はん",
+            english: "cooked rice​; meal",
+            samples: vec![],
+        },
+        Word {
+            kanji: "晩ご飯",
+            hiragana: "ばん.ご.はん",
+            english: "dinner",
+            samples: vec![],
+        },
+        Word {
+            kanji: "朝ご飯",
+            hiragana: "あさ.ご.はん",
+            english: "breakfast",
+            samples: vec![],
+        },
+        Word {
+            kanji: "昼ご飯",
+            hiragana: "ひる.ご.はん",
+            english: "lunch",
+            samples: vec![],
+        },
+        Word {
+            kanji: "時間",
+            hiragana: "じ.かん",
+            english: "time; hours",
+            samples: vec![
+                SampleSentence {
+                    kanji: "時間ある？",
+                    english: "Do you have time?",
+                },
+                SampleSentence {
+                    kanji: "寝る時間よ。",
+                    english: "It's time to sleep.",
+                },
+                SampleSentence {
+                    kanji: "お昼の時間です",
+                    english: "It's time for lunch.",
+                },
+            ],
+        },
+        Word {
+            kanji: "時々",
+            hiragana: "とき.どき",
+            english: "sometimes; at times​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "「時々」って何？",
+                    english: "What do you mean by \"sometimes\"?",
+                },
+                SampleSentence {
+                    kanji: "時々、猫は朝食に電池を食べます。",
+                    english: "Sometimes the cat eats batteries for breakfast.",
+                },
+                SampleSentence {
+                    kanji: "時々犬はご飯を食べます。",
+                    english: "Sometimes the dog eats rice.",
+                },
+            ],
+        },
+        Word {
+            kanji: "半分",
+            hiragana: "はん.ぶん",
+            english: "half",
+            samples: vec![
+                SampleSentence {
+                    kanji: "私は半分の時間でできます。",
+                    english: "I can do it in half the time.",
+                },
+                SampleSentence {
+                    kanji: "昼ご飯の半分しか食べられませんでした。",
+                    english: "I only had time to eat half my lunch.",
+                },
+                SampleSentence {
+                    kanji: "私は晩ご飯に半分のお金を使いました。",
+                    english: "I spent half my money on dinner.",
+                },
+            ],
+        },
+        Word {
+            kanji: "大丈夫",
+            hiragana: "だい.じょう.ぶ",
+            english: "ok",
+            samples: vec![
+                SampleSentence {
+                    kanji: "大丈夫ですか？",
+                    english: "Are you ok?",
+                },
+                SampleSentence {
+                    kanji: "彼女は大丈夫だと言った。",
+                    english: "She said she would be ok.",
+                },
+                SampleSentence {
+                    kanji: "犬を食べても大丈夫ですか？",
+                    english: "Is it ok if I eat the dog?",
+                },
+            ],
+        },
+        Word {
+            kanji: "学生",
+            hiragana: "がく.せい",
+            english: "student (esp. a university student)​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "彼女は学生です。",
+                    english: "She is a student.",
+                },
+                SampleSentence {
+                    kanji: "学生は昼ご飯を食べています。",
+                    english: "The students are eating lunch.",
+                },
+                SampleSentence {
+                    kanji: "学生は皆同じ用に見えます。",
+                    english: "The students all look the same.",
+                },
+            ],
+        },
+        Word {
+            kanji: "お金",
+            hiragana: "お.かね",
+            english: "money​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "お金が必要ですか？",
+                    english: "Do you need money?",
+                },
+                SampleSentence {
+                    kanji: "お金を見つけた。",
+                    english: "I found the money.",
+                },
+                SampleSentence {
+                    kanji: "お金があれば、猫に電池を入れます。",
+                    english: "When I have money I will feed batteries to my cat.",
+                },
+            ],
+        },
+        Word {
+            kanji: "親切",
+            hiragana: "しん.せつ",
+            english: "kind; gentle; friendly",
+            samples: vec![
+                SampleSentence {
+                    kanji: "彼女は彼に親切です。",
+                    english: "She's kind to him.",
+                },
+                SampleSentence {
+                    kanji: "彼女は非常に親切だ。",
+                    english: "She is very kind.",
+                },
+                SampleSentence {
+                    kanji: "彼は親切な人です。",
+                    english: "He's a good person.",
+                },
+            ],
+        },
+        Word {
+            kanji: "難しい",
+            hiragana: "むずか.しい",
+            english: "difficult; hard; complicated",
+            samples: vec![
+                SampleSentence {
+                    kanji: "難しすぎる。",
+                    english: "It's too hard.",
+                },
+                SampleSentence {
+                    kanji: "これは難しいです。",
+                    english: "This is difficult.",
+                },
+                SampleSentence {
+                    kanji: "日本語はそんなに難しくない。",
+                    english: "Japanese is not that difficult.",
+                },
+            ],
+        },
+        Word {
+            kanji: "明日",
+            hiragana: "あ.した",
+            english: "tomorrow​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "また明日ね！",
+                    english: "See you tomorrow!",
+                },
+                SampleSentence {
+                    kanji: "明日は寒くて風が強いでしょう。",
+                    english: "It will be cold and windy tomorrow.",
+                },
+                SampleSentence {
+                    kanji: "明日は注意してください、宿題はほとんど無理です。",
+                    english: "Be careful tomorrow, the homework is almost impossible.",
+                },
+            ],
+        },
+        Word {
+            kanji: "靴",
+            hiragana: "くつ",
+            english: "shoe; shoes",
+            samples: vec![
+                SampleSentence {
+                    kanji: "これはエマの靴ですか？",
+                    english: "Is this Emma's shoes?",
+                },
+                SampleSentence {
+                    kanji: "この靴はどう思う？",
+                    english: "What do you think of these shoes?",
+                },
+                SampleSentence {
+                    kanji: "靴はありますか？",
+                    english: "Do you have your shoes?",
+                },
+            ],
+        },
+        Word {
+            kanji: "例えば",
+            hiragana: "たと.えば",
+            english: "for example",
+            samples: vec![
+                SampleSentence {
+                    kanji: "例えば、これは一本のペンです",
+                    english: "For example, this is a pen.",
+                },
+                SampleSentence {
+                    kanji: "例えば、英語が好きですか。",
+                    english: "For example, do you like English?",
+                },
+                SampleSentence {
+                    kanji: "例：「犬は電池を食べるのが大好き」。",
+                    english: "For example: \"The dog loves to eat batteries\".",
+                },
+            ],
+        },
+        Word {
+            kanji: "問題",
+            hiragana: "もんだい",
+            english: "problem​; question (e.g. on a test)",
+            samples: vec![
+                SampleSentence {
+                    kanji: "それが問題？",
+                    english: "Is that a problem?",
+                },
+                SampleSentence {
+                    kanji: "問題ないよ。",
+                    english: "No problem!",
+                },
+                SampleSentence {
+                    kanji: "それは問題です。",
+                    english: "That is a problem.",
                 },
             ],
         },
