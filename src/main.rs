@@ -541,6 +541,8 @@ fn main() -> Result<(), Box<dyn Error>> {
             }],
         },
         */
+        /*
+        // 4
         Word {
             kanji: "君",
             hiragana: "きみ",
@@ -776,6 +778,28 @@ fn main() -> Result<(), Box<dyn Error>> {
                 },
             ],
         },
+        Word {
+            kanji: "寒い",
+            hiragana: "さむ.い",
+            english: "cold (e.g. weather)​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "寒いです。",
+                    english: "It's cold.",
+                },
+                SampleSentence {
+                    kanji: "彼女は寒いと言った。",
+                    english: "She told me she is cold.",
+                },
+                SampleSentence {
+                    kanji: "私は少し寒いです。",
+                    english: "I am a little cold.",
+                },
+            ],
+        },
+        */
+
+        // 5
         Word {
             kanji: "寒い",
             hiragana: "さむ.い",
