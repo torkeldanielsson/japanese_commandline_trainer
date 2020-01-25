@@ -21,20 +21,22 @@ fn print_words(words: &Vec<Word>, kanjis: bool) -> String {
     let mut res: String = String::new();
     let mut rng = rand::thread_rng();
 
+    res = format!("{}\\begin{{sloppypar}}\n", res);
+
     res = format!("{}\\normalsize\n", res);
-    res = format!("{}\\begin{{spacing}}{{1.4}}\n", res);
+    res = format!("{}\\begin{{spacing}}{{2.1}}\n", res);
 
     for word in words {
         res = format!(
-            "{}{} = {} = {}, \\ \\ \\ ",
+            "{}\\mbox{{{} = {} = {},}} \\ \\ \\ ",
             res, word.kanji, word.hiragana, word.english
         );
     }
 
     res = format!("{}\\end{{spacing}}\n", res);
+
     res = format!("{}\\large\n", res);
     res = format!("{}\\begin{{spacing}}{{2.1}}\n", res);
-    res = format!("{}\\begin{{sloppypar}}\n", res);
 
     let mut slice_index = 0;
     let mut lines = 0;
@@ -72,8 +74,9 @@ fn print_words(words: &Vec<Word>, kanjis: bool) -> String {
         lines += 1;
     }
 
-    res = format!("{}\\end{{sloppypar}}\n", res);
     res = format!("{}\\end{{spacing}}\n", res);
+
+    res = format!("{}\\end{{sloppypar}}\n", res);
 
     return res;
 }
@@ -801,21 +804,264 @@ fn main() -> Result<(), Box<dyn Error>> {
 
         // 5
         Word {
-            kanji: "寒い",
-            hiragana: "さむ.い",
-            english: "cold (e.g. weather)​",
+            kanji: "寝る",
+            hiragana: "ね.る",
+            english: "​to sleep; to lie down​",
             samples: vec![
                 SampleSentence {
-                    kanji: "寒いです。",
-                    english: "It's cold.",
+                    kanji: "犬が寝る。",
+                    english: "The dog sleeps.",
                 },
                 SampleSentence {
-                    kanji: "彼女は寒いと言った。",
-                    english: "She told me she is cold.",
+                    kanji: "猫が寝る。",
+                    english: "A cat sleeps.",
                 },
                 SampleSentence {
-                    kanji: "私は少し寒いです。",
-                    english: "I am a little cold.",
+                    kanji: "僕は寝たい。",
+                    english: "I want to sleep.",
+                },
+            ],
+        },
+        Word {
+            kanji: "犬",
+            hiragana: "いぬ",
+            english: "dog​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "犬を見た。",
+                    english: "I saw a dog.",
+                },
+                SampleSentence {
+                    kanji: "犬に注意！",
+                    english: "Beware of the dog!",
+                },
+                SampleSentence {
+                    kanji: "私は犬が好き。",
+                    english: "I like dogs.",
+                },
+            ],
+        },
+        Word {
+            kanji: "猫",
+            hiragana: "ねこ",
+            english: "​cat",
+            samples: vec![
+                SampleSentence {
+                    kanji: "黒猫が好きですか？",
+                    english: "Do you like black cats?",
+                },
+                SampleSentence {
+                    kanji: "猫が寝る。",
+                    english: "The cat sleeps. ",
+                },
+                SampleSentence {
+                    kanji: "私の猫です。",
+                    english: "It is my cat.",
+                },
+            ],
+        },
+        Word {
+            kanji: "僕",
+            hiragana: "ぼく",
+            english: "​I; me (male term)",
+            samples: vec![
+                SampleSentence {
+                    kanji: "僕だよ！",
+                    english: "It's me!",
+                },
+                SampleSentence {
+                    kanji: "僕は忙しい。",
+                    english: "I'm busy. ",
+                },
+                SampleSentence {
+                    kanji: "僕は寝たい。",
+                    english: "I want to sleep. ",
+                },
+            ],
+        },
+        Word {
+            kanji: "注意",
+            hiragana: "ちゅう.い",
+            english: "​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "足元にご注意ください。",
+                    english: "Watch your step.",
+                },
+                SampleSentence {
+                    kanji: "もうちょっと注意しないと。",
+                    english: "I have to pay a little more attention.",
+                },
+                SampleSentence {
+                    kanji: "ひらくドアにご注意ください。",
+                    english: "Please be careful of the opening doors.",
+                },
+            ],
+        },
+        Word {
+            kanji: "足元",
+            hiragana: "あし.もと",
+            english: "​at one's feet; one's step",
+            samples: vec![
+                SampleSentence {
+                    kanji: "足元に気をつけて。",
+                    english: "Mind your step.",
+                },
+            ],
+        },
+        Word {
+            kanji: "気を付けて",
+            hiragana: "き.を.つ.けて",
+            english: "take care; be careful​​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "気を付けてね。",
+                    english: "Take care!",
+                },
+                SampleSentence {
+                    kanji: "これからはもっと気を付けてね。",
+                    english: "Be more careful from now on.",
+                },
+                SampleSentence {
+                    kanji: "トム、気をつけて！",
+                    english: "Tom, be careful!",
+                },
+            ],
+        },
+        Word {
+            kanji: "下さい",
+            hiragana: "くだ.さい",
+            english: "please give me; please do for me​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "来て下さい。",
+                    english: "Please come.",
+                },
+                SampleSentence {
+                    kanji: "本を下さい。",
+                    english: "Please give me a book.",
+                },
+                SampleSentence {
+                    kanji: "水をください。",
+                    english: "Please give me some water. ",
+                },
+            ],
+        },
+        Word {
+            kanji: "水",
+            hiragana: "みず",
+            english: "water​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "犬は水が好きです。",
+                    english: "The dog likes water.",
+                },
+                SampleSentence {
+                    kanji: "猫は水が好きではありません。",
+                    english: "The cat does not like water.",
+                },
+            ],
+        },
+        Word {
+            kanji: "英語",
+            hiragana: "えい.ご",
+            english: "English (language)​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "英語の先生です。",
+                    english: "I am an English teacher. ",
+                },
+                SampleSentence {
+                    kanji: "彼は英語がうまい。",
+                    english: "He is such a good English speaker.",
+                },
+                SampleSentence {
+                    kanji: "私は英語が話せる。",
+                    english: "I can speak English. ",
+                },
+            ],
+        },
+        Word {
+            kanji: "先生",
+            hiragana: "せん.せい",
+            english: "teacher; instructor; master​​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "彼女は先生です。",
+                    english: "She is a teacher.",
+                },
+                SampleSentence {
+                    kanji: "彼は先生ですか。",
+                    english: "Is he a teacher?",
+                },
+                SampleSentence {
+                    kanji: "英語の先生です。",
+                    english: "I am an English teacher.",
+                },
+                SampleSentence {
+                    kanji: "私は日本語の先生です。",
+                    english: "I am a Japanese teacher.",
+                },
+            ],
+        },
+        Word {
+            kanji: "食べる",
+            hiragana: "た.べる",
+            english: "​to eat",
+            samples: vec![
+                SampleSentence {
+                    kanji: "アイス食べる？",
+                    english: "Do you want some ice cream?",
+                },
+                SampleSentence {
+                    kanji: "食べるときは注意してください。",
+                    english: "Please be careful when you eat.",
+                },
+                SampleSentence {
+                    kanji: "電池を食べないでください。",
+                    english: "Please don't eat the batteries.",
+                },
+                SampleSentence {
+                    kanji: "犬を食べないでください。",
+                    english: "Please don't eat the dog.",
+                },
+            ],
+        },
+        Word {
+            kanji: "元気",
+            hiragana: "げん.き",
+            english: "lively; full of spirit; healthy",
+            samples: vec![
+                SampleSentence {
+                    kanji: "元気？",
+                    english: "How are you?",
+                },
+                SampleSentence {
+                    kanji: "お元気で！",
+                    english: "Good luck!",
+                },
+                SampleSentence {
+                    kanji: "私は元気です。",
+                    english: "I'm fine.",
+                },
+            ],
+        },
+        Word {
+            kanji: "黒 / 黒い",
+            hiragana: "くろ / くろい",
+            english: "black",
+            samples: vec![
+                SampleSentence {
+                    kanji: "その猫は黒です。",
+                    english: "That cat is black.",
+                },
+                SampleSentence {
+                    kanji: "犬は黒い電池を食べています。",
+                    english: "The dog is eating a black battery.",
+                },
+                SampleSentence {
+                    kanji: "自転車が黒である事は良い事だと思います。",
+                    english: "I think it is good that the bike is black.",
                 },
             ],
         },
