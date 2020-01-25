@@ -23,19 +23,19 @@ fn print_words(words: &Vec<Word>, kanjis: bool) -> String {
 
     res = format!("{}\\begin{{sloppypar}}\n", res);
 
-    res = format!("{}\\normalsize\n", res);
-    res = format!("{}\\begin{{spacing}}{{2.1}}\n", res);
+    res = format!("{}\\large\n", res);
+    res = format!("{}\\begin{{spacing}}{{1.4}}\n", res);
 
     for word in words {
         res = format!(
-            "{}\\mbox{{{} = {} = {},}} \\ \\ \\ ",
+            "{}\\mbox{{{}}}\n = \n\\mbox{{{}}}\n = \n\\mbox{{{}}}\n, \\ \\ \\\n",
             res, word.kanji, word.hiragana, word.english
         );
     }
 
     res = format!("{}\\end{{spacing}}\n", res);
 
-    res = format!("{}\\large\n", res);
+    res = format!("{}\\LARGE\n", res);
     res = format!("{}\\begin{{spacing}}{{2.1}}\n", res);
 
     let mut slice_index = 0;
@@ -802,6 +802,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         },
         */
 
+        /*
         // 5
         Word {
             kanji: "寝る",
@@ -852,7 +853,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                 },
                 SampleSentence {
                     kanji: "猫が寝る。",
-                    english: "The cat sleeps. ",
+                    english: "The cat sleeps.",
                 },
                 SampleSentence {
                     kanji: "私の猫です。",
@@ -871,18 +872,18 @@ fn main() -> Result<(), Box<dyn Error>> {
                 },
                 SampleSentence {
                     kanji: "僕は忙しい。",
-                    english: "I'm busy. ",
+                    english: "I'm busy.",
                 },
                 SampleSentence {
-                    kanji: "僕は寝たい。",
-                    english: "I want to sleep. ",
+                    kanji: "僕は本を読みます。",
+                    english: "I read books.",
                 },
             ],
         },
         Word {
             kanji: "注意",
             hiragana: "ちゅう.い",
-            english: "​",
+            english: "​caution; being careful; warning",
             samples: vec![
                 SampleSentence {
                     kanji: "足元にご注意ください。",
@@ -902,12 +903,10 @@ fn main() -> Result<(), Box<dyn Error>> {
             kanji: "足元",
             hiragana: "あし.もと",
             english: "​at one's feet; one's step",
-            samples: vec![
-                SampleSentence {
-                    kanji: "足元に気をつけて。",
-                    english: "Mind your step.",
-                },
-            ],
+            samples: vec![SampleSentence {
+                kanji: "足元に気をつけて。",
+                english: "Mind your step.",
+            }],
         },
         Word {
             kanji: "気を付けて",
@@ -943,7 +942,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                 },
                 SampleSentence {
                     kanji: "水をください。",
-                    english: "Please give me some water. ",
+                    english: "Please give me some water.",
                 },
             ],
         },
@@ -969,7 +968,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             samples: vec![
                 SampleSentence {
                     kanji: "英語の先生です。",
-                    english: "I am an English teacher. ",
+                    english: "I am an English teacher.",
                 },
                 SampleSentence {
                     kanji: "彼は英語がうまい。",
@@ -977,7 +976,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                 },
                 SampleSentence {
                     kanji: "私は英語が話せる。",
-                    english: "I can speak English. ",
+                    english: "I can speak English.",
                 },
             ],
         },
@@ -1052,7 +1051,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             english: "black",
             samples: vec![
                 SampleSentence {
-                    kanji: "その猫は黒です。",
+                    kanji: "その猫は黒いです。",
                     english: "That cat is black.",
                 },
                 SampleSentence {
@@ -1065,6 +1064,297 @@ fn main() -> Result<(), Box<dyn Error>> {
                 },
             ],
         },
+        */
+
+        // 6
+        Word {
+            kanji: "取る",
+            hiragana: "と.る",
+            english: "to take; to pick up",
+            samples: vec![
+                SampleSentence {
+                    kanji: "この黒い本を取ってください。",
+                    english: "Please take this black book.",
+                },
+                SampleSentence {
+                    kanji: "どっち 取る？",
+                    english: "Which one do you take?",
+                },
+                SampleSentence {
+                    kanji: "それ取って。",
+                    english: "Give me that.",
+                },
+            ],
+        },
+        Word {
+            kanji: "知る",
+            hiragana: "し.る",
+            english: "to know; to be aware of",
+            samples: vec![
+                SampleSentence {
+                    kanji: "すみません、知りません。",
+                    english: "I'm sorry, I don't know.",
+                },
+                SampleSentence {
+                    kanji: "私も知りたい！",
+                    english: "I also want to know!",
+                },
+                SampleSentence {
+                    kanji: "知らなかった？",
+                    english: "Didn't you know that?",
+                },
+            ],
+        },
+        Word {
+            kanji: "同じ",
+            hiragana: "おな.じ",
+            english: "same; identical",
+            samples: vec![
+                SampleSentence {
+                    kanji: "同じ物を下さい。",
+                    english: "Please give me the same thing.",
+                },
+                SampleSentence {
+                    kanji: "彼は同じ用に話します。",
+                    english: "He speaks in the same manner.",
+                },
+            ],
+        },
+        Word {
+            kanji: "感じ",
+            hiragana: "かん.じ",
+            english: "feeling; sense; impression​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "何か感じる。",
+                    english: "I feel something.",
+                },
+                SampleSentence {
+                    kanji: "彼は感じがいい。",
+                    english: "He has a good sense of feeling.",
+                },
+                SampleSentence {
+                    kanji: "今同じ事を感じる。",
+                    english: "Now I feel the same.",
+                },
+            ],
+        },
+        Word {
+            kanji: "番",
+            hiragana: "ばん",
+            english: "number (in a series)​; (one's) turn",
+            samples: vec![
+                SampleSentence {
+                    kanji: "私が一番。",
+                    english: "I'm first.",
+                },
+                SampleSentence {
+                    kanji: "君の番だよ。",
+                    english: "It's your move.",
+                },
+                SampleSentence {
+                    kanji: "だれの番だ。",
+                    english: "Whose go is it?",
+                },
+                SampleSentence {
+                    kanji: "その時私は非番だった。",
+                    english: "I was off duty at the time.",
+                },
+            ],
+        },
+        Word {
+            kanji: "必要",
+            hiragana: "ひつ.よう",
+            english: "necessary; needed; essential",
+            samples: vec![
+                SampleSentence {
+                    kanji: "君が必要だ。",
+                    english: "I need you.",
+                },
+                SampleSentence {
+                    kanji: "私は水を必要です。",
+                    english: "I need water.",
+                },
+                SampleSentence {
+                    kanji: "必要ありません。",
+                    english: "I don't need it.",
+                },
+            ],
+        },
+        Word {
+            kanji: "仕事",
+            hiragana: "し.ごと",
+            english: "work; job; business",
+            samples: vec![
+                SampleSentence {
+                    kanji: "仕事が必要だ。",
+                    english: "I need a job.",
+                },
+                SampleSentence {
+                    kanji: "それが仕事です。",
+                    english: "It's my job.",
+                },
+                SampleSentence {
+                    kanji: "仕事に行きなさい。",
+                    english: "Go to work.",
+                },
+            ],
+        },
+        Word {
+            kanji: "皆",
+            hiragana: "みんな",
+            english: "all; everyone",
+            samples: vec![
+                SampleSentence {
+                    kanji: "皆さんはお元気？",
+                    english: "How is everyone?",
+                },
+                SampleSentence {
+                    kanji: "皆さんによろしく。",
+                    english: "With kind regards to you all.",
+                },
+                SampleSentence {
+                    kanji: "皆がそう言っている。",
+                    english: "Everyone says that.",
+                },
+            ],
+        },
+        Word {
+            kanji: "書く",
+            hiragana: "か.く",
+            english: "to write; to draw",
+            samples: vec![
+                SampleSentence {
+                    kanji: "何書いてるの？",
+                    english: "What are you writing?",
+                },
+                SampleSentence {
+                    kanji: "書く物をくれ。",
+                    english: "Give me something to write on.",
+                },
+                SampleSentence {
+                    kanji: "何か書きなさい。",
+                    english: "Write something.",
+                },
+            ],
+        },
+        Word {
+            kanji: "次",
+            hiragana: "つぎ",
+            english: "next",
+            samples: vec![
+                SampleSentence {
+                    kanji: "マリアは次です。",
+                    english: "Maria is next.",
+                },
+                SampleSentence {
+                    kanji: "次は気を付けてね。",
+                    english: "Be more careful next time.",
+                },
+                SampleSentence {
+                    kanji: "次の猫を持ってきてください！",
+                    english: "Bring the next cat please!",
+                },
+            ],
+        },
+        Word {
+            kanji: "結構",
+            hiragana: "けっ.こう",
+            english:
+                "sufficient; fine (in the sense of \"I'm fine\"); (by implication) no thank you​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "結構です。",
+                    english: "I'm fine, thank you.",
+                },
+                SampleSentence {
+                    kanji: "それだけで結構です。",
+                    english: "That is all.",
+                },
+                SampleSentence {
+                    kanji: "それで結構だと思います。",
+                    english: "That would be fine.",
+                },
+            ],
+        },
+        Word {
+            kanji: "強い",
+            hiragana: "つよ.い",
+            english: "strong",
+            samples: vec![
+                SampleSentence {
+                    kanji: "風が強くなった。",
+                    english: "The wind grew stronger.",
+                },
+                SampleSentence {
+                    kanji: "彼女は気が強い。",
+                    english: "She's strong-willed.",
+                },
+                SampleSentence {
+                    kanji: "彼は君より強い。",
+                    english: "He's stronger than you.",
+                },
+            ],
+        },
+        Word {
+            kanji: "勉強",
+            hiragana: "べん.きょう",
+            english: "study​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "勉強しなさい。",
+                    english: "Study!",
+                },
+                SampleSentence {
+                    kanji: "パリで勉強したい。",
+                    english: "I'd like to study in Paris.",
+                },
+                SampleSentence {
+                    kanji: "勉強は何が好きですか。",
+                    english: "What subjects do you like the best?",
+                },
+            ],
+        },
+        Word {
+            kanji: "住む",
+            hiragana: "すむ",
+            english: "to live (of humans); to reside; to inhabit",
+            samples: vec![
+                SampleSentence {
+                    kanji: "どこに住んでいますか？",
+                    english: "Where do you live?",
+                },
+                SampleSentence {
+                    kanji: "私はスウェーデンに住んでいます。",
+                    english: "I live in Sweden.",
+                },
+                SampleSentence {
+                    kanji: "彼女がどこに住んでいるか知っていますか？",
+                    english: "Do you know where she lives?",
+                },
+            ],
+        },
+        /*
+        Word {
+            kanji: "",
+            hiragana: "",
+            english: "",
+            samples: vec![
+                SampleSentence {
+                    kanji: "",
+                    english: "",
+                },
+                SampleSentence {
+                    kanji: "",
+                    english: "",
+                },
+                SampleSentence {
+                    kanji: "",
+                    english: "",
+                },
+            ],
+        },
+        */
     ];
 
     {
