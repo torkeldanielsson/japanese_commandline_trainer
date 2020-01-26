@@ -1605,6 +1605,8 @@ fn main() -> Result<(), Box<dyn Error>> {
             ],
         },
         */
+        /*
+        // 8
         Word {
             kanji: "目",
             hiragana: "め",
@@ -1839,6 +1841,229 @@ fn main() -> Result<(), Box<dyn Error>> {
                 },
             ],
         },
+        */
+
+        Word {
+            kanji: "言葉",
+            hiragana: "こと.ば",
+            english: "word; words",
+            samples: vec![
+                SampleSentence {
+                    kanji: "言葉にできない。",
+                    english: "I don't know how to say it.",
+                },
+                SampleSentence {
+                    kanji: "言葉を学ぶのは難しいです。",
+                    english: "It is difficult to learn words.",
+                },
+                SampleSentence {
+                    kanji: "この言葉は宿題ですか？",
+                    english: "Is this word in the homework?",
+                },
+            ],
+        },
+        Word {
+            kanji: "買う",
+            hiragana: "か.う",
+            english: "to buy; to purchase",
+            samples: vec![
+                SampleSentence {
+                    kanji: "何買ったの？",
+                    english: "What did you buy?",
+                },
+                SampleSentence {
+                    kanji: "彼は車を買った。",
+                    english: "He bought a car.",
+                },
+                SampleSentence {
+                    kanji: "ジェニファーは猫を買いました。",
+                    english: "Jennifer bought a cat.",
+                },
+            ],
+        },
+        Word {
+            kanji: "手",
+            hiragana: "て",
+            english: "hand; arm",
+            samples: vec![
+                SampleSentence {
+                    kanji: "手をあげろ！",
+                    english: "Hands up!",
+                },
+                SampleSentence {
+                    kanji: "私の手は青です。",
+                    english: "My hands are blue.",
+                },
+                SampleSentence {
+                    kanji: "メアリーは手を使って書いた。",
+                    english: "Mary used her hands to write.",
+                },
+            ],
+        },
+        Word {
+            kanji: "返す",
+            hiragana: "かえ.す",
+            english: "to return (something); to restore; to put back",
+            samples: vec![
+                SampleSentence {
+                    kanji: "かばんを返せ。",
+                    english: "Give me back my bag.",
+                },
+                SampleSentence {
+                    kanji: "サムの猫を返しましたか？",
+                    english: "Did you return Sam's cat?",
+                },
+                SampleSentence {
+                    kanji: "先生の本を返しましたか？",
+                    english: "Did you return the teacher's book?",
+                },
+            ],
+        },
+        Word {
+            kanji: "掛ける",
+            hiragana: "か.ける",
+            english: "to put on (glasses, etc.); to hang up (e.g. a coat, a picture on the wall)",
+            samples: vec![
+                SampleSentence {
+                    kanji: "眼鏡を掛けて下さい。",
+                    english: "Please put on your glasses.",
+                },
+            ],
+        },
+        Word {
+            kanji: "終わる",
+            hiragana: "お.わる",
+            english: "to finish; to end",
+            samples: vec![
+                SampleSentence {
+                    kanji: "宿題終わった？",
+                    english: "Have you finished your homework?",
+                },
+                SampleSentence {
+                    kanji: "良い本は終わりましたか？",
+                    english: "Is the good book finished?",
+                },
+                SampleSentence {
+                    kanji: "学校の前に本を終わるに注意して下さい。",
+                    english: "Remember to finish the book before school.",
+                },
+            ],
+        },
+        Word {
+            kanji: "意味",
+            hiragana: "い.み",
+            english: "meaning; significance; sense",
+            samples: vec![
+                SampleSentence {
+                    kanji: "どういう意味？",
+                    english: "What do you mean?",
+                },
+                SampleSentence {
+                    kanji: "この言葉の意味は何ですか？",
+                    english: "What is the meaning of this word?",
+                },
+                SampleSentence {
+                    kanji: "「エスカレーター」とはどういう意味ですか？",
+                    english: "What does \"escalator\" mean?",
+                },
+            ],
+        },
+        Word {
+            kanji: "味",
+            hiragana: "あじ",
+            english: "",
+            samples: vec![
+                SampleSentence {
+                    kanji: "これの味はどうですか？",
+                    english: "How is the taste of this?",
+                },
+                SampleSentence {
+                    kanji: "ケーキの味が好きですか？",
+                    english: "Do you like the taste of cake?",
+                },
+                SampleSentence {
+                    kanji: "私はあなたが作った昼食の味が好きです。",
+                    english: "I like the taste of the lunch you made.",
+                },
+            ],
+        },
+        Word {
+            kanji: "最近",
+            hiragana: "さい.きん",
+            english: "recently; lately",
+            samples: vec![
+                SampleSentence {
+                    kanji: "最近どう？",
+                    english: "How have you been recently?",
+                },
+                SampleSentence {
+                    kanji: "最近何してるの？",
+                    english: "What are you up to these days?",
+                },
+                SampleSentence {
+                    kanji: "最近何か映画見た？",
+                    english: "Seen any movies lately?",
+                },
+            ],
+        },
+        Word {
+            kanji: "最初",
+            hiragana: "さい.しょ",
+            english: "beginning; outset; first",
+            samples: vec![
+                SampleSentence {
+                    kanji: "彼が最初に来た。",
+                    english: "He was the first to come.",
+                },
+                SampleSentence {
+                    kanji: "私が最初に行きます。",
+                    english: "I'll go first.",
+                },
+                SampleSentence {
+                    kanji: "最初のころを思い出す。",
+                    english: "I remember the first time.",
+                },
+            ],
+        },
+        Word {
+            kanji: "最後",
+            hiragana: "さい.ご",
+            english: "last; final; end; conclusion",
+            samples: vec![
+                SampleSentence {
+                    kanji: "彼女が最後に来ました。",
+                    english: "She came last.",
+                },
+                SampleSentence {
+                    kanji: "最後の犬を食べました。",
+                    english: "We ate the last dog.",
+                },
+                SampleSentence {
+                    kanji: "最後のケーキは良くなかった。",
+                    english: "The last cake was not good.",
+                },
+            ],
+        },
+        Word {
+            kanji: "映画",
+            hiragana: "えい.が",
+            english: "movie; film",
+            samples: vec![
+                SampleSentence {
+                    kanji: "映画を取りましたか?",
+                    english: "Did you pick up a movie?",
+                },
+                SampleSentence {
+                    kanji: "あなたの一番の映画は何ですか？",
+                    english: "What is your favourite movie?",
+                },
+                SampleSentence {
+                    kanji: "良い映画はありますか？",
+                    english: "Do you have any good movies?",
+                },
+            ],
+        },
+
         /*
         Word {
             kanji: "",
