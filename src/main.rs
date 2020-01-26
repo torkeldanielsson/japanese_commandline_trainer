@@ -1336,6 +1336,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             ],
         },
         */
+        /*
         Word {
             kanji: "学校",
             hiragana: "がっ.こう",
@@ -1600,6 +1601,241 @@ fn main() -> Result<(), Box<dyn Error>> {
                 SampleSentence {
                     kanji: "それは問題です。",
                     english: "That is a problem.",
+                },
+            ],
+        },
+        */
+        Word {
+            kanji: "目",
+            hiragana: "め",
+            english: "eye; eyesight",
+            samples: vec![
+                SampleSentence {
+                    kanji: "目を使って見てください。",
+                    english: "Use your eyes to see.",
+                },
+                SampleSentence {
+                    kanji: "学生は目がないと問題です。",
+                    english: "Students have problems if they have no eyes.",
+                },
+                SampleSentence {
+                    kanji: "猫は良い目をあります。",
+                    english: "Cats have good eyes.",
+                },
+            ],
+        },
+        Word {
+            kanji: "眼鏡",
+            hiragana: "め.がね",
+            english: "glasses; eyeglasses",
+            samples: vec![
+                SampleSentence {
+                    kanji: "彼女は眼鏡をかけています。",
+                    english: "She is wearing glasses.",
+                },
+                SampleSentence {
+                    kanji: "犬は眼鏡をかけません。",
+                    english: "Dogs do not wear glasses.",
+                },
+                SampleSentence {
+                    kanji: "眼鏡には電池は必要ありません",
+                    english: "Glasses do not need batteries.",
+                },
+            ],
+        },
+        Word {
+            kanji: "青い",
+            hiragana: "あおい",
+            english: "blue; azure",
+            samples: vec![
+                SampleSentence {
+                    kanji: "彼女の目は青いです。",
+                    english: "Her eyes are blue.",
+                },
+                SampleSentence {
+                    kanji: "車は青です。",
+                    english: "The car is blue.",
+                },
+                SampleSentence {
+                    kanji: "猫は青くない。",
+                    english: "The cat is not blue.",
+                },
+            ],
+        },
+        Word {
+            kanji: "車",
+            hiragana: "くるま",
+            english: "car",
+            samples: vec![
+                SampleSentence {
+                    kanji: "車が青い。",
+                    english: "The car is blue.",
+                },
+                SampleSentence {
+                    kanji: "その車は黒ではありません。",
+                    english: "That car is not black.",
+                },
+                SampleSentence {
+                    kanji: "車には電池があります。",
+                    english: "Cars have batteries.",
+                },
+            ],
+        },
+        Word {
+            kanji: "頃",
+            hiragana: "ころ",
+            english: "(approximate) time; around; about",
+            samples: vec![
+                SampleSentence {
+                    kanji: "2時半頃出た。",
+                    english: "I left around 2:30.",
+                },
+                SampleSentence {
+                    kanji: "彼は二時頃来た。",
+                    english: "He came at about two o'clock.",
+                },
+                SampleSentence {
+                    kanji: "4時半頃。",
+                    english: "About half past four.",
+                },
+                SampleSentence {
+                    kanji: "8時頃。",
+                    english: "About eight o'clock.",
+                },
+                SampleSentence {
+                    kanji: "3時15分頃。",
+                    english: "About a quarter past three.",
+                },
+                SampleSentence {
+                    kanji: "5時から5分頃。",
+                    english: "About five minutes after five o'clock.",
+                },
+            ],
+        },
+        Word {
+            kanji: "上",
+            hiragana: "うえ",
+            english: "above; up; over",
+            samples: vec![SampleSentence {
+                kanji: "靴は本の上にあります。",
+                english: "The shoes are above the book.",
+            }],
+        },
+        Word {
+            kanji: "他",
+            hiragana: "ほか",
+            english: "other (place, thing, person)",
+            samples: vec![
+                SampleSentence {
+                    kanji: "他のものはないの？",
+                    english: "Isn't there anything else?",
+                },
+                SampleSentence {
+                    kanji: "他の車はありますか？",
+                    english: "Is there another car?",
+                },
+                SampleSentence {
+                    kanji: "他にないのか。",
+                    english: "That's all you've got?",
+                },
+            ],
+        },
+        Word {
+            kanji: "質問",
+            hiragana: "しつ.もん",
+            english: "question",
+            samples: vec![
+                SampleSentence {
+                    kanji: "質問していい？",
+                    english: "Can I ask you a question?",
+                },
+                SampleSentence {
+                    kanji: "何か質問がありますか？",
+                    english: "Do you have any questions?",
+                },
+                SampleSentence {
+                    kanji: "常用漢字について質問があります。",
+                    english: "I have a question about the Joyo kanji.",
+                },
+            ],
+        },
+        Word {
+            kanji: "家",
+            hiragana: "いえ",
+            english: "house; residence; family",
+            samples: vec![
+                SampleSentence {
+                    kanji: "家はどこ？",
+                    english: "Where's your house?",
+                },
+                SampleSentence {
+                    kanji: "家に来て。",
+                    english: "Come home.",
+                },
+                SampleSentence {
+                    kanji: "家に電話して！",
+                    english: "Call home!",
+                },
+            ],
+        },
+        Word {
+            kanji: "電話",
+            hiragana: "でん.わ",
+            english: "phone; phone call​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "後で電話して!",
+                    english: "Call me later!",
+                },
+                SampleSentence {
+                    kanji: "もう電話しないでください。",
+                    english: "Don't call me anymore.",
+                },
+                SampleSentence {
+                    kanji: "彼女は寝ているので、電話しないでください。",
+                    english: "You shouldn't call her, she's sleeping.",
+                },
+            ],
+        },
+        Word {
+            kanji: "違う",
+            hiragana: "ちが.う",
+            english: "to differ (from)",
+            samples: vec![
+                SampleSentence {
+                    kanji: "違う！",
+                    english: "No!",
+                },
+                SampleSentence {
+                    kanji: "どうして？何が違うの？",
+                    english: "Why? What's wrong?",
+                },
+                SampleSentence {
+                    kanji: "それは間違った猫です！",
+                    english: "That's the wrong cat!",
+                },
+                SampleSentence {
+                    kanji: "私は知っていると思ったが、間違っていた。",
+                    english: "I thought I knew but I was wrong.",
+                },
+            ],
+        },
+        Word {
+            kanji: "受ける",
+            hiragana: "う.ける",
+            english: "to receive; to get​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "まあ受け取って。",
+                    english: "Just take it.",
+                },
+                SampleSentence {
+                    kanji: "彼女は自転車を受け取りました。",
+                    english: "She received a bike.",
+                },
+                SampleSentence {
+                    kanji: "子供は犬を受け取りました。",
+                    english: "The kid received a dog.",
                 },
             ],
         },
