@@ -1842,7 +1842,6 @@ fn main() -> Result<(), Box<dyn Error>> {
             ],
         },
         */
-
         Word {
             kanji: "言葉",
             hiragana: "こと.ば",
@@ -1923,12 +1922,10 @@ fn main() -> Result<(), Box<dyn Error>> {
             kanji: "掛ける",
             hiragana: "か.ける",
             english: "to put on (glasses, etc.); to hang up (e.g. a coat, a picture on the wall)",
-            samples: vec![
-                SampleSentence {
-                    kanji: "眼鏡を掛けて下さい。",
-                    english: "Please put on your glasses.",
-                },
-            ],
+            samples: vec![SampleSentence {
+                kanji: "眼鏡を掛けて下さい。",
+                english: "Please put on your glasses.",
+            }],
         },
         Word {
             kanji: "終わる",
@@ -2063,7 +2060,6 @@ fn main() -> Result<(), Box<dyn Error>> {
                 },
             ],
         },
-
         /*
         Word {
             kanji: "",
