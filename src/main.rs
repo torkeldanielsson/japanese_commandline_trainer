@@ -1968,7 +1968,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         Word {
             kanji: "味",
             hiragana: "あじ",
-            english: "",
+            english: "flavor; taste​",
             samples: vec![
                 SampleSentence {
                     kanji: "これの味はどうですか？",
