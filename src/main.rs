@@ -1842,6 +1842,8 @@ fn main() -> Result<(), Box<dyn Error>> {
             ],
         },
         */
+
+        /*
         Word {
             kanji: "言葉",
             hiragana: "こと.ば",
@@ -2057,6 +2059,299 @@ fn main() -> Result<(), Box<dyn Error>> {
                 SampleSentence {
                     kanji: "良い映画はありますか？",
                     english: "Do you have any good movies?",
+                },
+            ],
+        },
+        */
+        Word {
+            kanji: "新宿",
+            hiragana: "しん.じゅく",
+            english: "Shinjuku",
+            samples: vec![
+                SampleSentence {
+                    kanji: "明日新宿に行きますか？",
+                    english: "Are you going to Shinjuku tomorrow?",
+                },
+                SampleSentence {
+                    kanji: "みんな新宿に来ます。",
+                    english: "Everyone comes to Shinjuku.",
+                },
+                SampleSentence {
+                    kanji: "新宿で彼女に会っています。",
+                    english: "I'm meeting her in Shinjuku.",
+                },
+            ],
+        },
+        Word {
+            kanji: "会う",
+            hiragana: "あ.う",
+            english: "to meet; to encounter; to see​",
+            samples: vec![
+                SampleSentence {
+                    kanji: "また会おう！",
+                    english: "See you later!",
+                },
+                SampleSentence {
+                    kanji: "君に会いたい",
+                    english: "I want to see you",
+                },
+                SampleSentence {
+                    kanji: "明日3時頃に会いましょう。",
+                    english: "Let's meet tomorrow about three o'clock.",
+                },
+            ],
+        },
+        Word {
+            kanji: "東京",
+            hiragana: "とう.きょう",
+            english: "Tokyo",
+            samples: vec![
+                SampleSentence {
+                    kanji: "東京にいますか？会いましょう！",
+                    english: "Are you in Tokyo? Let's meet!",
+                },
+                SampleSentence {
+                    kanji: "東京のどこに住んでいますか？",
+                    english: "Where in Tokyo do you live?",
+                },
+                SampleSentence {
+                    kanji: "東京にはあまり車がありません。",
+                    english: "There are not so many cars in Tokyo.",
+                },
+            ],
+        },
+        Word {
+            kanji: "西",
+            hiragana: "にし",
+            english: "west",
+            samples: vec![
+                SampleSentence {
+                    kanji: "南大沢は新宿の西にあります。",
+                    english: "Minamiosawa is west of Shinjuku.",
+                },
+                SampleSentence {
+                    kanji: "橋本は南大沢の西にあります。",
+                    english: "Hashimoto is west of Minamiosawa.",
+                },
+                SampleSentence {
+                    kanji: "スウェーデンはフィンランドの西にあります。",
+                    english: "Sweden is west of Finland.",
+                },
+            ],
+        },
+        Word {
+            kanji: "東",
+            hiragana: "ひがし",
+            english: "east",
+            samples: vec![
+                SampleSentence {
+                    kanji: "ドイツはフランスの東にあります。",
+                    english: "Germany is east of France.",
+                },
+                SampleSentence {
+                    kanji: "東京は東日本にあります。",
+                    english: "Tokyo is in eastern Japan.",
+                },
+                SampleSentence {
+                    kanji: "今は橋本の東にいます。",
+                    english: "We are in east of Hashimoto now.",
+                },
+            ],
+        },
+        Word {
+            kanji: "北",
+            hiragana: "きた",
+            english: "north",
+            samples: vec![
+                SampleSentence {
+                    kanji: "スウェーデンは北ヨーロッパにあります。",
+                    english: "Sweden is in northern Europe.",
+                },
+                SampleSentence {
+                    kanji: "私は北日本が好きです。",
+                    english: "I like northern Japan.",
+                },
+                SampleSentence {
+                    kanji: "風は北から来ます。",
+                    english: "The wind comes from the north.",
+                },
+            ],
+        },
+        Word {
+            kanji: "南",
+            hiragana: "みなみ",
+            english: "south",
+            samples: vec![
+                SampleSentence {
+                    kanji: "私は南が好き。",
+                    english: "I like the south.",
+                },
+                SampleSentence {
+                    kanji: "私たちはスウェーデンの南に住んでいました。",
+                    english: "We lived in the south of Sweden.",
+                },
+            ],
+        },
+        Word {
+            kanji: "南大沢",
+            hiragana: "みなみ.おお.さわ",
+            english: "Minami-Ōsawa",
+            samples: vec![
+                SampleSentence {
+                    kanji: "今、私たちは南大沢に住んでいます。",
+                    english: "Now we live in Minami-Ōsawa.",
+                },
+                SampleSentence {
+                    kanji: "南大沢はいい場所です。",
+                    english: "Minami-Ōsawa is a nice place.",
+                },
+                SampleSentence {
+                    kanji: "これを南大沢で買いました。",
+                    english: "I bought this in Minami-Ōsawa.",
+                },
+            ],
+        },
+        Word {
+            kanji: "多摩",
+            hiragana: "た.ま",
+            english: "Tama",
+            samples: vec![
+                SampleSentence {
+                    kanji: "多摩センターで映画を見に行きませんか？",
+                    english: "Do you want to go see a movie in Tama Center?",
+                },
+                SampleSentence {
+                    kanji: "最後は多摩に行くことです。",
+                    english: "The last thing is to go to Tama.",
+                },
+                SampleSentence {
+                    kanji: "多摩センターは南大沢の東にあります。",
+                    english: "Tama Center is east of Minamiosawa.",
+                },
+            ],
+        },
+        Word {
+            kanji: "橋本",
+            hiragana: " はし.もと ",
+            english: "Hashimoto",
+            samples: vec![
+                SampleSentence {
+                    kanji: "橋本は南大沢の後です。",
+                    english: "Hashimoto is after Minamiosawa.",
+                },
+                SampleSentence {
+                    kanji: "橋本に行きます。",
+                    english: "I am going to Hashimoto.",
+                },
+                SampleSentence {
+                    kanji: "ああ、これは橋本じゃない！",
+                    english: "Oh no, this is not Hashimoto!",
+                },
+            ],
+        },
+        Word {
+            kanji: "左",
+            hiragana: "ひだり",
+            english: "left",
+            samples: vec![
+                SampleSentence {
+                    kanji: "黒い本の左にある青い本を取ります。",
+                    english: "Take the blue book that is left of the black one.",
+                },
+                SampleSentence {
+                    kanji: "左車を返します。",
+                    english: "Return the left car.",
+                },
+                SampleSentence {
+                    kanji: "「足」の左にある言葉はどういう意味ですか？",
+                    english: "What does this word to the left of \"foot\" mean?",
+                },
+            ],
+        },
+        Word {
+            kanji: "右",
+            hiragana: "みぎ",
+            english: "right",
+            samples: vec![
+                SampleSentence {
+                    kanji: "メアリーの左にいるのは誰ですか？",
+                    english: "Who is that to the left of Mary?",
+                },
+                SampleSentence {
+                    kanji: "気をつけて、私はあなたの右にいます。",
+                    english: "Watch out, I'm on your right side.",
+                },
+                SampleSentence {
+                    kanji: "右の本をください。",
+                    english: "Give me the left book.",
+                },
+            ],
+        },
+        Word {
+            kanji: "下",
+            hiragana: "した",
+            english: "under",
+            samples: vec![
+                SampleSentence {
+                    kanji: "最後の本は犬の下にありました！",
+                    english: "The last book was under the dog!",
+                },
+                SampleSentence {
+                    kanji: "眼鏡は車の下にありました。",
+                    english: "The glasses was under the car.",
+                },
+            ],
+        },
+        Word {
+            kanji: "新しい",
+            hiragana: "あたら.しい",
+            english: "new",
+            samples: vec![
+                SampleSentence {
+                    kanji: "これは新しい車です。",
+                    english: "This is a new car.",
+                },
+                SampleSentence {
+                    kanji: "新宿で新しい本を買いました。",
+                    english: "I bought a new book in Shinjuku.",
+                },
+                SampleSentence {
+                    kanji: "新しい猫を買いました。最後のは電池を食べませんでした。",
+                    english: "We bought a new cat. The last one didn't eat batteries.",
+                },
+            ],
+        },
+        Word {
+            kanji: "止まれ",
+            hiragana: "と.まれ",
+            english: "stop",
+            samples: vec![
+                SampleSentence {
+                    kanji: "電池を食べないでください！",
+                    english: "Please don't eat batteries!",
+                },
+                SampleSentence {
+                    kanji: "そこで止まれ。",
+                    english: "Stop there.",
+                },
+            ],
+        },
+        Word {
+            kanji: "誰",
+            hiragana: "だれ",
+            english: "who",
+            samples: vec![
+                SampleSentence {
+                    kanji: "誰がいますか？",
+                    english: "Who's there?",
+                },
+                SampleSentence {
+                    kanji: "誰がアイスクリームを食べたいですか！",
+                    english: "Who wants to eat ice cream!",
+                },
+                SampleSentence {
+                    kanji: "誰が青猫を取ったの？",
+                    english: "Who took the blue cat?",
                 },
             ],
         },
