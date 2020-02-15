@@ -179,6 +179,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
         file.write_all(b"\\documentclass{article}\n")?;
         file.write_all(b"\\usepackage[a4paper, margin=0.5in]{geometry}\n")?;
+        file.write_all(b"\\usepackage[1]{pagesel}\n")?;
         file.write_all(b"\\usepackage{setspace}\n")?;
         file.write_all(b"\\hyphenpenalty 10000")?;
         file.write_all(b"\\exhyphenpenalty 10000")?;
@@ -224,6 +225,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         file.write_all(b"\\documentclass{article}\n")?;
         file.write_all(b"\\usepackage[a4paper, margin=0.5in]{geometry}\n")?;
         file.write_all(b"\\usepackage{setspace}\n")?;
+        file.write_all(b"\\usepackage[1]{pagesel}\n")?;
         file.write_all(b"\\usepackage{longtable, booktabs}\n")?;
         file.write_all(b"\\usepackage{tabu}\n")?;
         file.write_all(b"\\hyphenpenalty 10000")?;
