@@ -1,4 +1,3 @@
-use google_translate2::{Translate, TranslateTextRequest};
 use rand::Rng;
 use std::default::Default;
 use std::env;
@@ -6,10 +5,6 @@ use std::error::Error;
 use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
-use yup_oauth2::{
-    parse_application_secret, ApplicationSecret, Authenticator, DefaultAuthenticatorDelegate,
-    FlowType, MemoryStorage,
-};
 
 #[derive(Debug, Clone)]
 struct SampleSentence {
@@ -36,15 +31,24 @@ fn print_words(words: &Vec<Word>, kanjis: bool) -> String {
 
     for word in words {
         if word.kanji != "" {
-            res = format!(
-                "{}\\mbox{{{}}}\n = \n\\mbox{{{}}}\n = \n\\mbox{{{}}}\n, \\ \\ \\\n",
-                res, word.kanji, word.hiragana, word.english
-            );
-        } else {
-            res = format!(
-                "{}\\mbox{{{}}}\n = \n\\mbox{{{}}}\n, \\ \\ \\\n",
-                res, word.hiragana, word.english
-            );
+            if word.hiragana != "" && word.english != "" {
+                res = format!(
+                    "{}\\mbox{{{}}}\n = \n\\mbox{{{}}}\n = \n\\mbox{{{}}}\n, \\ \\ \\\n",
+                    res, word.kanji, word.hiragana, word.english
+                );
+            } else if word.hiragana != "" {
+                res = format!(
+                    "{}\\mbox{{{}}}\n = \n\\mbox{{{}}}\n, \\ \\ \\\n",
+                    res, word.kanji, word.hiragana
+                );
+            } else if word.english != "" {
+                res = format!(
+                    "{}\\mbox{{{}}}\n = \n\\mbox{{{}}}\n, \\ \\ \\\n",
+                    res, word.kanji, word.english
+                );
+            } else {
+                res = format!("{}\\mbox{{{}}}\n, \\ \\ \\\n", res, word.kanji);
+            }
         }
     }
 
@@ -139,93 +143,10 @@ fn print_examples(words: &Vec<Word>) -> String {
     return res;
 }
 
-fn main() -> Result<(), Box<dyn Error>> {
-    let args: Vec<String> = env::args().collect();
-    let filename = &args[1];
-
-    let input = fs::read_to_string(filename).expect("error reading file");
-
-    // 音楽 = おんがく
-    // 音楽
-
-    println!(
-        "{}",
-        fs::read_to_string("/home/torkel/Dropbox/dev/japanese_rust_generator-35e8e891602a.json")
-            .expect("no secret file found")
-    );
-
-    let secret = parse_application_secret(
-        &fs::read_to_string("/home/torkel/Dropbox/dev/japanese_rust_generator-35e8e891602a.json")
-            .expect("no secret file found"),
-    )
-    .expect("failed to parse secret");
-    let flo = FlowType::InstalledInteractive;
-    let auth = Authenticator::new(
-        &secret,
-        DefaultAuthenticatorDelegate,
-        hyper::Client::with_connector(hyper::net::HttpsConnector::new(
-            hyper_rustls::TlsClient::new(),
-        )),
-        <MemoryStorage as Default>::default(),
-        Some(flo),
-    );
-    let mut hub = Translate::new(
-        hyper::Client::with_connector(hyper::net::HttpsConnector::new(
-            hyper_rustls::TlsClient::new(),
-        )),
-        auth,
-    );
-
-    let mut words: Vec<Word> = Vec::new();
-
-    for line in input.lines().map(|s| s.trim()).filter(|s| !s.is_empty()) {
-        let parts: Vec<String> = line
-            .split('=')
-            .map(|s| s.trim())
-            .filter(|s| !s.is_empty())
-            .map(|s| s.to_owned())
-            .collect();
-        match parts.len() {
-            1 => {
-                let mut req = TranslateTextRequest::default();
-
-                req.q = Some(vec![parts[0].clone()]);
-                req.source = Some("Japanese".to_string());
-                req.target = Some("Swedish".to_string());
-
-                let result = hub.translations().translate(req).doit();
-
-                match result {
-                    Err(e) => {
-                        println!("Translate error: {}", e);
-                    }
-                    Ok(res) => println!("Success: {:?}", res),
-                }
-            }
-            2 => {
-                words.push(Word {
-                    kanji: parts[0].clone(),
-                    hiragana: "".to_owned(),
-                    english: parts[1].clone(),
-                    samples: vec![],
-                });
-            }
-            3 => {
-                words.push(Word {
-                    kanji: parts[0].clone(),
-                    hiragana: parts[1].clone(),
-                    english: parts[2].clone(),
-                    samples: vec![],
-                });
-            }
-            _ => {
-                println!("Unexpected line format: {}", line);
-            }
-        }
-    }
-
+fn generate(words: &Vec<Word>, n: i32) -> Result<(), Box<dyn Error>> {
     {
-        let mut file = File::create("gen_kanji.tex").unwrap();
+        let filename = format!("gen_kanji_{}.tex", n);
+        let mut file = File::create(filename).unwrap();
 
         file.write_all(b"\\documentclass{article}\n")?;
         file.write_all(b"\\usepackage[a4paper, margin=0.5in]{geometry}\n")?;
@@ -248,7 +169,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     }
 
     {
-        let mut file = File::create("gen_english.tex").unwrap();
+        let filename = format!("gen_english_{}.tex", n);
+        let mut file = File::create(filename).unwrap();
 
         file.write_all(b"\\documentclass{article}\n")?;
         file.write_all(b"\\usepackage[a4paper, margin=0.5in]{geometry}\n")?;
@@ -270,7 +192,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     }
 
     {
-        let mut file = File::create("gen_samples.tex").unwrap();
+        let filename = format!("gen_samples_{}.tex", n);
+        let mut file = File::create(filename).unwrap();
 
         file.write_all(b"\\documentclass{article}\n")?;
         file.write_all(b"\\usepackage[a4paper, margin=0.5in]{geometry}\n")?;
@@ -292,6 +215,69 @@ fn main() -> Result<(), Box<dyn Error>> {
 
         file.write_all(b"\\end{CJK*}\n")?;
         file.write_all(b"\\end{document}\n")?;
+    }
+
+    Ok(())
+}
+
+fn main() -> Result<(), Box<dyn Error>> {
+    let args: Vec<String> = env::args().collect();
+    let filename = &args[1];
+
+    let input = fs::read_to_string(filename).expect("error reading file");
+
+    // 音楽 = おんがく
+    // 音楽
+
+    let mut words: Vec<Word> = Vec::new();
+    let mut n = 1;
+
+    for line in input.lines().map(|s| s.trim()).filter(|s| !s.is_empty()) {
+        let parts: Vec<String> = line
+            .split('=')
+            .map(|s| s.trim())
+            .filter(|s| !s.is_empty())
+            .map(|s| s.to_owned())
+            .collect();
+        match parts.len() {
+            1 => {
+                words.push(Word {
+                    kanji: parts[0].clone(),
+                    hiragana: "".to_owned(),
+                    english: "".to_owned(),
+                    samples: vec![],
+                });
+            }
+            2 => {
+                words.push(Word {
+                    kanji: parts[0].clone(),
+                    hiragana: "".to_owned(),
+                    english: parts[1].clone(),
+                    samples: vec![],
+                });
+            }
+            3 => {
+                words.push(Word {
+                    kanji: parts[0].clone(),
+                    hiragana: parts[1].clone(),
+                    english: parts[2].clone(),
+                    samples: vec![],
+                });
+            }
+            _ => {
+                println!("Unexpected line format: {}", line);
+            }
+        }
+
+        if words.len() >= 15 {
+            generate(&words, n);
+            n += 1;
+            words = Vec::new();
+        }
+    }
+
+    if words.len() > 0 {
+        generate(&words, n);
     }
 
     Ok(())
