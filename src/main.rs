@@ -1,19 +1,21 @@
 use rand::Rng;
+use std::env;
 use std::error::Error;
+use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
 
 #[derive(Debug, Clone)]
 struct SampleSentence {
-    kanji: &'static str,
-    english: &'static str,
+    kanji: String,
+    english: String,
 }
 
 #[derive(Debug, Clone)]
 struct Word {
-    kanji: &'static str,
-    hiragana: &'static str,
-    english: &'static str,
+    kanji: String,
+    hiragana: String,
+    english: String,
     samples: Vec<SampleSentence>,
 }
 
@@ -132,131 +134,45 @@ fn print_examples(words: &Vec<Word>) -> String {
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let words = vec![
-        Word {
-            kanji: "起きます",
-            hiragana: "お.きる＝＞おきます",
-            english: "to wake up",
-            samples: vec![],
-        },
-        Word {
-            kanji: "寝ます",
-            hiragana: "寝る＝＞ねます",
-            english: "to sleep",
-            samples: vec![],
-        },
-        Word {
-            kanji: "休みます",
-            hiragana: "休む＝＞やすみます",
-            english: "to rest",
-            samples: vec![],
-        },
-        Word {
-            kanji: "勉強します",
-            hiragana: "べんきょう",
-            english: "to study",
-            samples: vec![],
-        },
-        Word {
-            kanji: "終わります",
-            hiragana: "おわります",
-            english: "to finish",
-            samples: vec![],
-        },
-        Word {
-            kanji: "映画館",
-            hiragana: "えいがかん",
-            english: "movie theatre",
-            samples: vec![],
-        },
-        Word {
-            kanji: "銀行",
-            hiragana: "ぎんこう",
-            english: "bank",
-            samples: vec![],
-        },
-        Word {
-            kanji: "会議",
-            hiragana: "かいぎ",
-            english: "meeting",
-            samples: vec![],
-        },
-        Word {
-            kanji: "郵便局",
-            hiragana: "ゆうびんきょく",
-            english: "post office",
-            samples: vec![],
-        },
-        Word {
-            kanji: "図書館",
-            hiragana: "としょかん",
-            english: "library",
-            samples: vec![],
-        },
-        Word {
-            kanji: "美術館",
-            hiragana: "びじゅつかん",
-            english: "art museum",
-            samples: vec![],
-        },
-        Word {
-            kanji: "朝",
-            hiragana: "あさ",
-            english: "morning",
-            samples: vec![],
-        },
-        Word {
-            kanji: "昼",
-            hiragana: "ひる",
-            english: "midday",
-            samples: vec![],
-        },
-        Word {
-            kanji: "夜",
-            hiragana: "よる",
-            english: "evening",
-            samples: vec![],
-        },
-        Word {
-            kanji: "晩",
-            hiragana: "ばん",
-            english: "evening",
-            samples: vec![],
-        },
-        Word {
-            kanji: "午前",
-            hiragana: "ごぜん",
-            english: "a.m.",
-            samples: vec![],
-        },
-        Word {
-            kanji: "午後",
-            hiragana: "ごご",
-            english: "p.m.",
-            samples: vec![],
-        },
-        /*
-        Word {
-            kanji: "",
-            hiragana: "",
-            english: "",
-            samples: vec![
-                SampleSentence {
-                    kanji: "",
-                    english: "",
-                },
-                SampleSentence {
-                    kanji: "",
-                    english: "",
-                },
-                SampleSentence {
-                    kanji: "",
-                    english: "",
-                },
-            ],
-        },
-        */
-    ];
+    let args: Vec<String> = env::args().collect();
+    let filename = &args[1];
+
+    let input = fs::read_to_string(filename).expect("error reading file");
+
+    // 音楽 = おんがく = musik
+    // 音楽 = musik
+
+    let mut words: Vec<Word> = Vec::new();
+
+    for line in input.lines() {
+        let parts: Vec<String> = line
+            .split('=')
+            .map(|s| s.trim())
+            .filter(|s| !s.is_empty())
+            .map(|s| s.to_owned())
+            .collect();
+        match parts.len() {
+            2 => {
+                words.push(Word {
+                    kanji: parts[0].clone(),
+                    hiragana: "".to_owned(),
+                    english: parts[1].clone(),
+                    samples: vec![],
+                });
+            }
+            3 => {
+                words.push(Word {
+                    kanji: parts[0].clone(),
+                    hiragana: parts[1].clone(),
+                    english: parts[2].clone(),
+                    samples: vec![],
+                });
+            }
+            _ => {
+                println!("Unexpected line format: {}", line);
+            }
+        }
+    }
 
     {
         let mut file = File::create("gen_kanji.tex").unwrap();
