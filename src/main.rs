@@ -1,5 +1,4 @@
 use rand::Rng;
-use std::default::Default;
 use std::env;
 use std::error::Error;
 use std::fs;
@@ -107,51 +106,16 @@ fn print_words(words: &Vec<Word>, kanjis: bool) -> String {
     return res;
 }
 
-fn print_examples(words: &Vec<Word>) -> String {
-    let mut res: String = String::new();
-    let mut rng = rand::thread_rng();
-
-    res = format!("{}\\large\n", res);
-    res = format!("{}\\begin{{spacing}}{{2.5}}\n", res);
-    res = format!("{}\\begin{{center}}\n", res);
-
-    res = format!("{}\\setlength\\LTleft{{0pt}}\n", res);
-    res = format!("{}\\setlength\\LTright{{0pt}}\n", res);
-    res = format!(
-        "{}\\begin{{longtabu}}{{@{{\\extracolsep{{\\fill}}}} l l }}\n",
-        res
-    );
-
-    let mut samples: Vec<&SampleSentence> = Vec::new();
-
-    for word in words {
-        for ws in &word.samples {
-            samples.push(&ws);
-        }
-    }
-
-    rng.shuffle(&mut samples);
-
-    for sample in &samples {
-        res = format!("{}{} & {} \\\\\n", res, sample.kanji, sample.english);
-    }
-
-    res = format!("{}\\end{{longtabu}}\n", res);
-    res = format!("{}\\end{{center}}\n", res);
-    res = format!("{}\\end{{spacing}}\n", res);
-
-    return res;
-}
-
-fn generate(words: &Vec<Word>, n: i32) -> Result<(), Box<dyn Error>> {
+fn generate(words: &Vec<Word>, header: String, n: i32) -> Result<(), Box<dyn Error>> {
     {
         let filename = format!("gen_kanji_{}.tex", n);
         let mut file = File::create(filename).unwrap();
 
         file.write_all(b"\\documentclass{article}\n")?;
-        file.write_all(b"\\usepackage[a4paper, margin=0.5in]{geometry}\n")?;
+        file.write_all(b"\\usepackage[a4paper, margin=0.9in]{geometry}\n")?;
         file.write_all(b"\\usepackage[1]{pagesel}\n")?;
         file.write_all(b"\\usepackage{setspace}\n")?;
+        file.write_all(b"\\usepackage{fancyhdr}\n")?;
         file.write_all(b"\\hyphenpenalty 10000")?;
         file.write_all(b"\\exhyphenpenalty 10000")?;
 
@@ -161,57 +125,13 @@ fn generate(words: &Vec<Word>, n: i32) -> Result<(), Box<dyn Error>> {
         file.write_all(b"\\pagenumbering{gobble}\n")?;
         file.write_all(b"\\begin{document}\n")?;
         file.write_all(b"\\begin{CJK*}{UTF8}{min}\n")?;
+        file.write_all(b"\\pagestyle{fancy}\n")?;
+        file.write_all(b"\\fancyhf{}\n")?;
+        file.write_all(b"\\chead{")?;
+        file.write_all(header.as_bytes())?;
+        file.write_all(b"}\n")?;
 
         file.write_all(print_words(&words, true).as_bytes())?;
-
-        file.write_all(b"\\end{CJK*}\n")?;
-        file.write_all(b"\\end{document}\n")?;
-    }
-
-    {
-        let filename = format!("gen_english_{}.tex", n);
-        let mut file = File::create(filename).unwrap();
-
-        file.write_all(b"\\documentclass{article}\n")?;
-        file.write_all(b"\\usepackage[a4paper, margin=0.5in]{geometry}\n")?;
-        file.write_all(b"\\usepackage{setspace}\n")?;
-        file.write_all(b"\\hyphenpenalty 10000")?;
-        file.write_all(b"\\exhyphenpenalty 10000")?;
-
-        file.write_all(b"\\usepackage[utf8]{inputenc}\n")?;
-        file.write_all(b"\\usepackage{CJKutf8, pinyin}\n")?;
-        file.write_all(b"\\usepackage[overlap, CJK]{ruby}\n")?;
-        file.write_all(b"\\pagenumbering{gobble}\n")?;
-        file.write_all(b"\\begin{document}\n")?;
-        file.write_all(b"\\begin{CJK*}{UTF8}{min}\n")?;
-
-        file.write_all(print_words(&words, false).as_bytes())?;
-
-        file.write_all(b"\\end{CJK*}\n")?;
-        file.write_all(b"\\end{document}\n")?;
-    }
-
-    {
-        let filename = format!("gen_samples_{}.tex", n);
-        let mut file = File::create(filename).unwrap();
-
-        file.write_all(b"\\documentclass{article}\n")?;
-        file.write_all(b"\\usepackage[a4paper, margin=0.5in]{geometry}\n")?;
-        file.write_all(b"\\usepackage{setspace}\n")?;
-        file.write_all(b"\\usepackage[1]{pagesel}\n")?;
-        file.write_all(b"\\usepackage{longtable, booktabs}\n")?;
-        file.write_all(b"\\usepackage{tabu}\n")?;
-        file.write_all(b"\\hyphenpenalty 10000")?;
-        file.write_all(b"\\exhyphenpenalty 10000")?;
-
-        file.write_all(b"\\usepackage[utf8]{inputenc}\n")?;
-        file.write_all(b"\\usepackage{CJKutf8, pinyin}\n")?;
-        file.write_all(b"\\usepackage[overlap, CJK]{ruby}\n")?;
-        file.write_all(b"\\pagenumbering{gobble}\n")?;
-        file.write_all(b"\\begin{document}\n")?;
-        file.write_all(b"\\begin{CJK*}{UTF8}{min}\n")?;
-
-        file.write_all(print_examples(&words).as_bytes())?;
 
         file.write_all(b"\\end{CJK*}\n")?;
         file.write_all(b"\\end{document}\n")?;
@@ -226,58 +146,63 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     let input = fs::read_to_string(filename).expect("error reading file");
 
+    // 音楽 = おんがく = music
     // 音楽 = おんがく
     // 音楽
 
     let mut words: Vec<Word> = Vec::new();
-    let mut n = 1;
+    let mut header = "".to_owned();
+    let mut n = 6;
 
     for line in input.lines().map(|s| s.trim()).filter(|s| !s.is_empty()) {
-        let parts: Vec<String> = line
-            .split('=')
-            .map(|s| s.trim())
-            .filter(|s| !s.is_empty())
-            .map(|s| s.to_owned())
-            .collect();
-        match parts.len() {
-            1 => {
-                words.push(Word {
-                    kanji: parts[0].clone(),
-                    hiragana: "".to_owned(),
-                    english: "".to_owned(),
-                    samples: vec![],
-                });
+        if line.chars().next().unwrap() == '#' {
+            if header != "" {
+                generate(&words, header, n)?;
+                words = Vec::new();
+                n += 1;
             }
-            2 => {
-                words.push(Word {
-                    kanji: parts[0].clone(),
-                    hiragana: "".to_owned(),
-                    english: parts[1].clone(),
-                    samples: vec![],
-                });
+            header = line[1..].to_owned();
+        } else {
+            let parts: Vec<String> = line
+                .split('=')
+                .map(|s| s.trim())
+                .filter(|s| !s.is_empty())
+                .map(|s| s.to_owned())
+                .collect();
+            match parts.len() {
+                1 => {
+                    words.push(Word {
+                        kanji: parts[0].clone(),
+                        hiragana: "".to_owned(),
+                        english: "".to_owned(),
+                        samples: vec![],
+                    });
+                }
+                2 => {
+                    words.push(Word {
+                        kanji: parts[0].clone(),
+                        hiragana: "".to_owned(),
+                        english: parts[1].clone(),
+                        samples: vec![],
+                    });
+                }
+                3 => {
+                    words.push(Word {
+                        kanji: parts[0].clone(),
+                        hiragana: parts[1].clone(),
+                        english: parts[2].clone(),
+                        samples: vec![],
+                    });
+                }
+                _ => {
+                    println!("Unexpected line format: {}", line);
+                }
             }
-            3 => {
-                words.push(Word {
-                    kanji: parts[0].clone(),
-                    hiragana: parts[1].clone(),
-                    english: parts[2].clone(),
-                    samples: vec![],
-                });
-            }
-            _ => {
-                println!("Unexpected line format: {}", line);
-            }
-        }
-
-        if words.len() >= 15 {
-            generate(&words, n);
-            n += 1;
-            words = Vec::new();
         }
     }
 
     if words.len() > 0 {
-        generate(&words, n);
+        generate(&words, header, n)?;
     }
 
     Ok(())
