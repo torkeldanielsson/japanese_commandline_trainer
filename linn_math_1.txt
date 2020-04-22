@@ -1,0 +1,128 @@
+
+#単語１
+数と式=すうとしき=Siffror och former
+正の数=せいのすう=Positiva siffror
+負の数=ふのすう=Negativa siffror
+計算=けいさん=Beräkning
+累乗=るいじょう=Exponentiation
+乗法=じょうほう=Multiplikation
+除法=じょほう=Division
+加法=かほう=Addition
+減法=げんぽう=Subtraktion
+方程式=ほうていしき=Ekvation
+解き方=ときかた=Hur man löser
+両辺=りょうへん=Båda sidor
+
+#単語２
+係数=けいすう=Koefficient
+比例=ひれい=Proportion
+比例定数=ひれいていすう=Proportinell konstant
+反比例=はんぴれい=Omvänd proportion
+時間数=じかんすう=Linjär funktion
+切片=せっぺん=Genomskärining
+定数=ていすう=Konstant
+直線=ちょくせん=Rak linje
+表す=あらわす=Representera
+解く=とく=Lösa
+関数=かんすう=Funktion
+表わされる=あらわされる=Den uttrycks
+
+#単語３
+式=しき=Formeln
+割合=わりあい=Percentage
+次=つぎ=Nästa
+完成する=かんせいする=Avsluta
+答え=こたえ=Svaret
+関係=かんけい=Relation
+値=あたい=Värde
+面積=めんせき=Area
+三角形=さんかっけい=Triangel
+その間=そのかん=Under tiden
+中点=ちゅうてん=Mittpunkt
+等しい=ひとしい=Lika
+
+#単語４
+線=せん=Linje
+四角形=しかっけい=Kvadrat
+結論=けつろん=Slutsats 
+部分=ぶぶん=Del
+使う=つかう=Använda
+記号=きごう=Symbol
+求め=もとめ=Request
+当分=とうぶん=Jämlik uppdelning
+対称=たいしょう=Symetri
+中心=ちゅうしん=Centrum
+二等辺三角形=にとうへんさんかっけい=Likbent triangel
+底辺=ていへん=Baslinje 
+
+#単語５
+証明する=しょうめいする=Bevisa
+辺=へん=Sida
+垂直=すいちょく=Vertikal, lodrätt, vinkelrätt
+二等分=にとうぶん=Bisektion 
+正六=せいろく=Hexagon
+正六角形=せいろっかっけい=Vanligt sexkant
+回移動=かいいどう=Flytta runt
+重ねる=かさねる=Rada upp
+平行移動=へいこういどう=Flytta parallellt
+合同=ごうどう=Congruens, Likhet
+条件=じょうけん=Terms, conditions
+示す=しめす, Visa
+対角線=たいかくせん=Diagonal linje
+
+#単語６
+四角錐=しかくすい=Pyramid med kvadratisk bas
+正=せい=Vanlig, logisks, sant
+途中=とちゅう=På väg
+投影図=とうえいず=Projektion, avbildning
+表面積=ひょうめんせき=Ytarea
+回転=かいてん=Rotation
+問い=とい=Fråga
+角=つの、かく=Vinkel
+体積=たいせき=Volym
+分線=ぶんせん=Delningslinje
+平行四辺形=へいこうしへんけい=Parallellogram
+二等分線=にとうぶんせん=Bisector
+扇形=おうぎけい=Fan shape
+直角三角形=ちょっかくさんかっけい=Right-angled triangle
+図形=ずけい=Figure
+直線=ちょくせん=Straight line
+軸=じく=Rotationsaxel
+立体=りったい=Three-dimensional object
+
+#単語7
+資料=しりょう=Document
+整理=せいり=Organisation
+各階級=かくかいきゅう=Varje klass
+度数=どすう=Frekvens
+調べる=しらべる=Undersöka
+分布=ぶんぷん=Fördela
+表=おもて=Tabell
+相対=あいたい=
+合計=ごうけい=Total
+起こる=おこる=Occur, to happen
+確率=かくりつ=Probability, Possibility 
+場合の数=ばあいのかず=Hur många gånger
+通学時=つうがくじ=I skolan
+相対度=そうたいどすう, Relativ frekvens
+数=かず=Siffror
+幅=はば=Bredd
+度数折れ線=どすうおれせん=Frekvenslinje
+さいころ=さいころ=Tärning
+和=わ=Summa
+
+#単語8
+ヒストグラム=ヒストグラム=Histogram
+以上=いじょう=Mer
+四捨五入=ししゃごんゆう=Avrundning
+小数=しょうすう=Decimal tal
+階級値=かいきゅうち=Klassvärde
+数えて=かぞえて=Räkning
+距離=きょり=Avstånd
+はかる=はかる=Mät
+有効数字=ゆうこうすうじ=Betydande siffror
+得=とく=Erhållen
+測定=そくてい=Mätning
+合計=ごうけい=Total mängd
+合わせて=あわせて=Enlighet med
+くじ引き=くじびき=Lotteri

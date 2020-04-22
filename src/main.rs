@@ -152,7 +152,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     let mut words: Vec<Word> = Vec::new();
     let mut header = "".to_owned();
-    let mut n = 6;
+    let mut n = 1;
 
     for line in input.lines().map(|s| s.trim()).filter(|s| !s.is_empty()) {
         if line.chars().next().unwrap() == '#' {
