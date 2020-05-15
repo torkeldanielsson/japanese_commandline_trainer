@@ -1,0 +1,132 @@
+#1
+身の回りの=みのまわりの=Nära
+探す=さがす=Leta efter
+手順=てじゅん=Tillvägagångssätt
+進め方=すすめかた=Förhandlingsordning
+準備する=じゅんびする=Förbereda
+教科書=きょうかしょ=Textbok
+又は=または=Eller
+図鑑=ずかん=Bildbok
+筆記用具=ひっきようぐ=Skrivmaterial
+虫眼鏡=ルーペ=むしめがね=Förstoringsglas
+巻き尺=まきじゃく=Måttband
+周り=まわり=Omkring
+
+#2
+見つける=みつける=Upptäcka
+言葉=ことば=Ord
+記録する=きろくする=Dokumentera
+天気=てんき=Vädret
+気温=きおん=Tempratur
+場所=ばしょ=Plats
+日当たり=ひあたり=Exponering för solen
+地面=ちめん=Mark/Jordyta
+様子=ようす=Status/situation
+集まる=あつまる=Samla
+昆虫=こんちゅう=Insekt
+等=など=t ex
+含める=ふくめる=Inkluderar
+気が付いたこと=きがついたこと=Saker som drog uppmärksamhet
+感想=かんそう=Intryck/Tankar
+参考=さんこう=Referens
+
+#3
+形=かたち=Formen
+...など=...など=T.ex.
+葉のつき方=つきかた=Hur man fäster löv
+真横=まよこ=Precis bredvid
+真上=まうえ=Precis ovanför
+拡大する=かくだいする=Förstora
+筒状=つつじょう=Cylinderform
+取り巻く=とりまく=Håller in
+花びら=はなびら=Kronblad
+花弁=かべん=Kronblad
+雌しべ=めしべ=Pistill
+
+#4
+雄しべ=おしべ=Ståndare
+...だけでなく=...だけでなく=Inte bara…
+日向=ひなた=Under solen
+日陰=ひかげ=Skugga
+明るさ=あかるさ=Ljushet
+異なる=ことなる=Skiljer sig
+生える=はえる=Växa
+蒲公英=たんぽぽ=Maskros
+全体=ぜんたい=Hela
+集まり=あつまり=Samling
+湿り気=しめりけ=Fuktighet
+
+#Sofie Science, p.141 2/3
+全体=ぜんたい=Hela
+姿=すがた=Form
+部分=ぶぶん=En del
+触る=さわる=Röra
+手触り=てざわり=Fingerkänsla
+葉=は=Löv
+匂い=におい=Lukt
+匂いをかく=においをかく=Lukta
+基本=きほん=Gundläggande
+操作=そうさ=Handling
+持ち運び=もちはこび=Bärandet
+近づける=ちかづける=Hålla nära
+
+#Sofie Science, p.141 3/3
+動かす=うごかす=Flytta på
+移動させる=いどうさせる=Flytta på
+固定する=こていする=Fixera
+危険=きけん=Fara
+位置=いち=Position
+前後=ぜんご=Fram och bak
+倍率=ばいりつ=Förstorings skala
+倍=ばい=Dubbel
+探す=さがす=Leta efter
+顔=かお=Ansikte
+記す=しるす=Notera
+失明=しつめい=Förlust av syn
+太陽=たいよう=Solen
+
+#Sofie Science, p.142 1/3
+形=かたち=Formen
+...など=...など=T.ex.
+葉のつき方=つきかた=Hur man fäster löv
+真横=まよこ=Precis bredvid
+真上=まうえ=Precis ovanför
+拡大する=かくだいする=Förstora
+筒状=つつじょう=Cylinderform
+取り巻く=とりまく=Håller in
+花びら=はなびら=Kronblad
+花弁=かべん=Kronblad
+雌しべ=めしべ=Pistill
+雄しべ=おしべ=Ståndare
+...だけでなく=...だけでなく=Inte bara…
+
+#Sofie Science, p.142 2/3
+日向=ひなた=Under solen
+日陰=ひかげ=Skugga
+明るさ=あかるさ=Ljushet
+異なる=ことなる=Skiljer sig
+生える=はえる=Växa
+蒲公英=たんぽぽ=Maskros
+全体=ぜんたい=Hela
+集まり=あつまり=Samling
+湿り気=しめりけ=Fuktighet
+茎=くき=Stjälk
+断面=だんめん=Tvärsnitt
+根=ね=Rot
+
+#Sofie Science, p.142 3/3
+様子=ようす=Utseende
+似る=にる=Liknande
+比べる=くらべる=Jämnför
+必要=ひつよう=Nödvändigt
+傷つく=きずつく=Sårad
+元=もと=Utsprungliga
+戻す=もどす=Lämna tillbaka
+変換=へんか=Byta
+倒れる=たおれる=Falla
+伸び=のび=Tillväxt
+先端=せんたん=Tips
+果実=かじつ=Frukt
+飛ばす=とばす=Flyga
+始める=はじめる=Börja
+やがて=やがて=Snart

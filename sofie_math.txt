@@ -1,0 +1,261 @@
+#単語 1
+符号=ふごう=symbol
+数=かず=nummer
+表す=あらわす=betyder/visar
+気温=きおん=temperatur
+基準=きじゅん=standard
+正の符号=せいのふごう=plus symbol
+負の符号=ふのふごう=minus symbol
+正の数=せいのすう=plus siffra
+負の数=ふのすう=minus siffra
+整数=せいすう=heltal
+正の整数=せいのせいすう=plus heltal
+負の整数=ふのせいすう=minus heltal
+
+#単語 2
+自然数=しぜんすう=plus heltal
+負の小数=ふのしょうすう=minus decimaltal
+負の分数=ふのふんすう=minus devision
+量=りょう=mängd
+海面=かいめん=havsytan
+高さ=たかさ=height
+標高=ひょうこう=elevation
+地点=ちてん=plats/ spot
+表=ひょうこう=grafik
+増える=ふえる=ökar
+減る=へる=minskar
+平年値=へいねんち=genomsnittligt värde
+水深=すいしん=vattnets djup
+
+#単語 3
+大小=だいしょう=storlek
+数直線=すうちょくせん=tallinje
+点=てん=spot
+直線=ちょくせん=raka linje
+一定の=いっていの=en viss
+間隔=かんかく=avstånd
+原点=げんてん=starting point
+方向=ほうこう=direction
+正の方向=せいのほうこう=plus direction
+負の方向=ふのほうこう=minus direction
+範囲=はんい=räckvidd
+各組=かくくみ=varje grupp
+
+#単語 4
+不等号=ふとうごう=ojämlikhetstecken
+直す=なおす=rätta till
+絶対値=ぜったいち=absolut värde
+距離=きょり=distans
+等しい=ひとしい=samma
+対応する=たいおうする=motsvarar
+基本=きほん=grundläggande
+問題=もんだい=problem
+答える=こたえる=svara
+反対=はんたい=tvärtom
+性質=せいしつ=natur
+解答=かいとう=answer
+不足=ふそく=brist
+超過=ちょうか=överskott
+
+#単語 5
+符号=ふごう=symbol 
+数=かず=nummer
+表す=あらわす=betyder/visar
+気温=きおん=temperatur
+基準=きじゅん=standard
+正の符号=せいのふごう=plus symbol
+負の符号=ふのふごう=minus symbol
+正の数=せいのすう=plus siffra
+負の数=ふのすう=minus siffra
+整数=せいすう=heltal
+正の整数=せいのせいすう=plus heltal
+負の整数=ふのせいすう=minus heltal
+
+#単語 6
+自然数=しぜんすう=plus heltal
+負の小数=ふのしょうすう=minus decimaltal
+負の分数=ふのふんすう=minus devision 
+量=りょう=mängd
+海面=かいめん=havsytan
+高さ=たかさ=height
+標高=ひょうこう=elevation
+地点=ちてん=plats/ spot 
+表=ひょうこう=grafik
+増える=ふえる=ökar
+減る=へる=minskar
+平年値=へいねんち=genomsnittligt värde
+水深=すいしん=vattnets djup
+
+#単語 7
+加法=かほう=Addition
+減法=げんぽ=Subtraktion
+結果=けっか=Resultat
+計算=けいさん=Beräkning
+正負=せいふ=Positiv/Negativ
+足し算=たしざん=Addition
+和=わ=Summa
+同符号=どうふごう=Samma symbol
+異符号=いふごう=Annan symbol
+求める=もとめる=Söka
+加える=くわえる=Addera
+引く=ひく=Subtrahera
+異なる=ことなる=Skiljer sig
+
+#単語 8
+分母=ぶんぼ=Nämnare
+通分=つうぶん=Minska
+練習=れんしゅう=träna / öva
+法則=ほうそく=Regel
+調べる=しらべる=Undersöka
+順序=じゅんじょ=Ordning
+順番=じゅんばん=Ordning
+変える=かえる=Ändrar
+変わる=かわる=Ändrar sig
+交換法則=こうかんほうそく=kommutativ lag
+成り立つ=なりたつ=Bestå av
+結合法則=けつごうほうそく=Associativitet
+かっこ=かっこ=Parantes
+組み合わせ=くみあわせ=Kombination
+説明する=せつめいする=Förklara
+
+#単語 9
+当てはまる=あてはまる=Passar in
+当てはまる数=あてはまるすう=Passande siffra
+差=さ=Skillnad
+式=しき=Ekvation
+確かめなさい=たしかめなさい=Bekräfta!
+確かめる=たしかめる=Bekräfta
+続けて=つづけて=Fortsättningsvis
+移動する=いどうする=Röra på sig
+...のように=Liksom…
+…である=?r …
+
+#単語 10
+同じになっている=おなじになっている=Har blivit samma
+従って=したがって=Därför
+同じである=おなじである=Är samma sak
+すなわち=Alltså
+右の図のように=みぎのずのように=Liksom bilden på högra sidan
+…となる=Blir …
+…という=Kallas …
+…ように表せる=Kan visas som …
+数を求める計算でなる=すうをもとめるけいさんである=Är beräkning som söker nummer
+…を引くこと=…をひくこと=Saken att subtrahera
+…を加えること=…をくわえること=Saken att addera
+
+#単語 11
+前ペエジ=ぜんペエジ=Föregående sida
+正負の数の減法=せいふのかずのげんぽう=Subtraktion av positiva och negativa siffror
+変える=かえる=Byta
+このように==Som det här
+減法の式=げんぽうのしき=Subtraktion formel
+加法の式=かほうのしき=Additions formel
+纏める=まとめる=Sammanfatta
+順位=じゅんい=Order/Placering
+順位表=じゅんいひょう=Ranknings tabell
+得失点=とくしってん=Mål
+項=こう=Term
+
+#単語 12
+交換=こうかん=Utbyta
+並ぶ=ならぶ=Ställa upp
+省略=しょうりゃく=Utlämnande
+絵札=えふだ=Bildkort
+枚=まい=Ark
+表=ひょう=Tabell
+混じった計算=まじったけいさん=Blandade beräkningar
+見直す=みなおす=Titta igen
+空欄=あきらん=Tom rad
+埋める=うめる=Täcka
+…となる=Det blir som…
+例えば=たとえば=T.ex.
+これらの数=これらのすう=Dessa siffror
+
+#Sofie Matte 26-28, 1
+記号=きごう=Symbol
+すべて=すべて=Allt
+省く=はぶく=Lämna ute
+書き並べる=かきならべる=Skriva i raden
+初めの項=はじめのこう=Första termen
+省略する=しょうりゃくする=Utelämna
+結果=けっか=Resultat
+補充=ほじゅう=Påfyllning
+除く=のぞく=Ta bort
+石垣=いしがき=Stenmur
+…となり合う=…となりあう=Utvecklas till…
+揃える=そろえる=Samla ihop
+
+#Sofie Matte 26-28, 2
+縦=たて=Lodrätt
+絵札=えふだ=Bildkort
+点数=てんすう=Poängtal
+当てる=あてる=Träffa
+入る=はいる=Gå in
+分かりやすい=わかりやすい=Lätt att förstå
+＝=とうごう、イコール=Lika med 
+X=掛ける　かける=Multiplicera
+÷=割る　わる=Dividera
+＋=たす=Addera
+ー=ひく=Substrahera
+＜=小なり、しょうなり=Ojämlikhetstecken
+＞=大なり、だいなり=Ojämlikhetstecken
+解答=かいとう=Svar
+
+#Sofie Matte 29, 1
+乗法=じょうほう=Multiplikation
+除法=じょほう=Division
+場面=ばめん=Scen
+場合=ばあい=Situation
+現在=げんざい=Aktuella, nu
+道路=どうろ=Väg
+節=せつ=Avsnitt
+速さ=はやさ=Snabbhet
+積=せき=Produkt
+異=い=Skillnad
+
+#Sofie Matte 29, 2
+説明する=せつめいする=Förklara
+東西=とうざい=Öst och väst
+東=ひがし=Öst 
+西=にし=Väst
+伸びる=のびる=Sträcker sig
+向かう=むかう=Vänder sig mot
+毎時=まいじ=Varje timme
+色々な=いろいろな=Olika
+入れる=いれる=Stoppar i
+かけ算=かけざん=Multiplikation
+
+#Sofie Matte p.30 + NHK
+歩き続ける=あるきつづける=Fortsätta att gå
+まとめる=まとめる=Samanfatta
+同符号=どうふごう=Samma symbol
+異符号=いふごう=Olika symbol
+付ける=つける=Sätta på
+社会=しゃかい=Samhället
+病院=びょういん=Sjukhus
+看護師=かんごし=Sjuksköterska
+働く=はたらく=Jobba
+制服=せいふく=Uniform
+病気=びょうき=Sjukdom
+絵=え=Bild
+感謝する=かんしゃする=Vara tacksam
+認める=みとめる=Erkänna
+呼吸=こきゅう=Andning
+政府=せいふく=Staten
+機械=きかい=Maskin
+役に立つ=やくにたつ=Hjälpa till 
+
+#Sofie Matte p.32
+比べる=くらべる=Jämföra
+簡単=かんたん=Enkel
+乗法の結合法則=じょうほうのけつごうほうそく=Ⅿultiplikationslag
+乗法の交換法則=じょうほうのこうかんほうそく=Utbyteslagen av multiplikation
+成り立つ=なりたつ=Betsår
+順序=じゅんじょ=Ordning
+組み合わせ=くみあわせ=Kombination
+結合=けつごう=kombination
+習う=ならう=Lära sig 
+なる=なる=Blir
+ある数=あるすう=Ett visst tal
+どんな数=どんなすう=Vilket tal 
+どうなるか=どうなるか=Hur blir det?

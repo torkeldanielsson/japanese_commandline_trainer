@@ -1,0 +1,87 @@
+#1
+選手=せんしゅ=Spelare
+力=ちから=Kraften
+合わせ=あわせ=Tillsammans
+押し合う=おしあう=Trycka tillsammans
+前後=ぜんご=Fram och bak
+動く=うごく=Röra sig
+両=りょう=Båda
+押し合う力=おしあうちから=Kraften som uppkommer när man trycker ihop
+関係=かんけい=Relation
+調べる=しらべる=Undersöka
+ほとんど=ほとんど=Nästan
+これから=これから=Från och med nu
+働き=はたらき=Jobbet
+について=について=About, om
+どのよな=どのよな=Vilka, Vilken
+
+#2
+綱引き=つなひき=Dragkamp
+両側=りょうそく=Båda sidor
+綱=つな=Rep
+側=かわ=Sida
+物体=ぶったい=Objekt
+受ける=うける=Mottagna
+条件=じょうけん=Villkor
+釣り合う=つりあう=Balansera
+引く=ひく=Dra
+静止する=せいしする=Stannar
+によって=によって=Enligt
+
+#Linn Sience 3
+表面=ひょうめん=Yta
+滑らかな=なめらかな=Len
+状態=じょうたい=Situation
+…ような=…ような=Som…
+…という=…という=Kallar…
+限界=げんかい=Begränsning
+それ以上=それいじょう=Mer än så
+注目する=ちゅうもくする=Fokusera
+指=ゆび=Finger
+地球上=ちきゅううえ=På jorden
+全て=すべて=Allt
+翅=ばね=Fjäder
+吊るす=つるす=Hänger
+落ちる=おちる=Faller
+社会=しゃかい=Samhället
+病院=びょういん=Sjukhus
+看護師=かんごし=Sjuksköterska
+働く=はたらく=Jobba
+制服=せいふく=Uniform
+
+#Linn Sience 3, 2/3
+記録用紙=きろくようし=Dokumentations papper
+目盛り=めもり=Skala
+力の向き=ちからのむき=Kraftriktning　
+糸の方向=いとのほうこう=Trådriktning
+作用=さよう=Handling
+穴の位置=あなのいち=Hålposition
+押し棒=おしぼう=Skjutstång
+直方体=ちょくほうたい=Rektangulär parallellpiped
+指針=ししん=Guideline
+思い出し=おもいだし=Återkallelse
+例=れい=Exempel
+探し=さがし=Söker
+水面=みなも=Vattenyta
+身のまわり=みのまわり=Omkring, nära
+現象=げんしょう=Fenomen
+摩擦力=まさつりょく=Friktionskraft
+
+#Linn Sience 3, 3/3
+生じる=しょうじる=Orsaka, inträffa
+重力=じゅうりょく=Gravitationen
+置く=おく=Lägga
+照明=しょうめい=Belysning
+器具=きぐ=Utrustning
+支える=ささえる=Support, stödja
+矢印=やじるし=Pilen
+いろいろな=いろいろな=Olika
+様子=ようす=Situation, omständigheter
+見つける=みつける=Hittar
+いくつかの=いくつかの=Några
+机=つくえ=Bord
+押す=おす=Trycka
+面=おもて、めん=Yta
+加える=くわえる=Addera
+反対向き=はんたいむき=Motsatta hållet
+ちょうど=ちょうど=Precis

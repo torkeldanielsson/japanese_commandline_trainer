@@ -126,3 +126,94 @@
 合計=ごうけい=Total mängd
 合わせて=あわせて=Enlighet med
 くじ引き=くじびき=Lotteri
+
+#Mattebok 1
+文字式=もじしき=Teckenuttryck
+多項式=たこうしき=Polynomial; upphöjt i
+学ぶ=まなぶ=Lär
+章=しょう=Kapitel
+文字=もじ=Karaktär, bokstav
+図形=ずけい=Figur
+性質=せいしつ=Natur
+考え=かんがえ=Tänkande
+先=さき=Föregående
+一定=いってい=Vissa
+間隔=かんかく=Intervall
+並べる=ならべる=Ställa in
+最勝=さいしょう=Första
+倒す=たおす=Faller
+速さ=はやさ=Snabbhet
+
+#Mattebok 2
+予測=よそく=Uppskattning
+比べる=くらべる=Jämför
+直径=ちょっけい=Diameter
+半円=はんえん=Halv cirkel
+線分=せんぶん=Linje segment
+等分=とうぶん=Jämlik uppdelning
+点=てん=Punkt
+近い=ちかい=Nära
+長=ちょう=Längden
+位置=いち=Position
+変える=かえる=Byta, ändra
+長さ=ながさ=Längden
+次々=つぎつぎ=En efter en
+とする=とする=Gör till, bestämmer
+関係=かんけい=Relation
+
+#Mattebok 2
+単項式=たんこうしき=Monomial, består av en enda term
+前=まえ=Före
+半径=はんけい=Radie
+表す=あらわす=Uttrycka
+分配法則=ぶんぱいほうそく=Distribuerande lag, multiplikation är upprepad addition
+たしかめ=たしかめ=Konfirmation
+練習=れんしゅう=Practice
+逆数=ぎゃくすう=Omvänd tal
+増やす=ふやす=Öka
+横=よこ=Bredvid
+長方形=ちょうほうけい=Rektangel
+表す式=あらわすしき=Uttryck som representerar
+示した=しめした=Visas
+組み合わせ=くみあわせ=Kombination
+てんかいする=てんかいする=Utveckla
+展開=てんかい=Expansion
+同類項=どうるいこう=Liknande termer
+場合=ばあい=I detta fall, situation
+項=こう=Punkt
+かっこ=かっこ=Parantes
+
+#Mattebok 3
+積=せき=Produkt
+形=かたち=Formen
+公式=こうしき=Officiell
+比べ=くらべ=Jämfört
+結果=けっか=Resultatet
+社会=しゃかい=Samhället
+病院=びょういん=Sjukhus
+看護師=かんごし=Sjuksköterska
+働く=はたらく=Jobba
+制服=せいふく=Uniform
+病気=びょうき=Sjukdom
+絵=え=Bild
+感謝する=かんしゃする=Vara tacksam
+認める=みとめる=Erkänna
+治す=なおす=Bota
+呼吸=こきゅう=Andning
+政府=せいふ=Staten
+きかい=きかい=Maskin
+やくいたつ=やくにたつ=Hjälpa till
+
+#Linn Mattebok 4
+それぞれ=それぞれ=Respektive
+即ち=すなわち=Alltså
+補充=ほじゅう=Kompletterande; mer
+平方=へいほう=Kvadrat
+差=さ=Differens
+。。。ように=。。。ように=Som … 
+違う=ちがう=Skiljer sig
+代入する=だいにゅうする=Ersätta
+導く=みちびく=Leda; guida
+解答=かいとう=Svar
+倍=ばい=Dubbelt
+乗=じょう=Upphöjt i
